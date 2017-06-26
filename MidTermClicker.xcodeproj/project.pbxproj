@@ -15,6 +15,7 @@
 		4A5130DE1F01965D0014D0E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130DC1F01965D0014D0E0 /* Main.storyboard */; };
 		4A5130E01F01965D0014D0E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130DF1F01965D0014D0E0 /* Assets.xcassets */; };
 		4A5130E31F01965D0014D0E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130E11F01965D0014D0E0 /* LaunchScreen.storyboard */; };
+		8E591FE2F0EB65DE995734E9 /* Pods_MidTermClicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		4A5130DF1F01965D0014D0E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A5130E21F01965D0014D0E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A5130E41F01965D0014D0E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90AAAD1526E59A03C480A21D /* Pods-MidTermClicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.debug.xcconfig"; sourceTree = "<group>"; };
+		B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.release.xcconfig"; sourceTree = "<group>"; };
+		C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MidTermClicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E591FE2F0EB65DE995734E9 /* Pods_MidTermClicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184DBEA366439FA63E60B8FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A5130C61F01965D0014D0E0 = {
 			isa = PBXGroup;
 			children = (
 				4A5130D11F01965D0014D0E0 /* MidTermClicker */,
 				4A5130D01F01965D0014D0E0 /* Products */,
+				DAE4F1F4CE289B82337E2F14 /* Pods */,
+				184DBEA366439FA63E60B8FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +88,15 @@
 			path = MidTermClicker;
 			sourceTree = "<group>";
 		};
+		DAE4F1F4CE289B82337E2F14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90AAAD1526E59A03C480A21D /* Pods-MidTermClicker.debug.xcconfig */,
+				B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A5130E71F01965D0014D0E0 /* Build configuration list for PBXNativeTarget "MidTermClicker" */;
 			buildPhases = (
+				C07090C2CEB88AEF59540CD4 /* [CP] Check Pods Manifest.lock */,
 				4A5130CB1F01965D0014D0E0 /* Sources */,
 				4A5130CC1F01965D0014D0E0 /* Frameworks */,
 				4A5130CD1F01965D0014D0E0 /* Resources */,
+				57C23A370B78710FFABAF2D6 /* [CP] Embed Pods Frameworks */,
+				EFF272D1E489FB2891EFC0DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,6 +169,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57C23A370B78710FFABAF2D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C07090C2CEB88AEF59540CD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EFF272D1E489FB2891EFC0DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A5130CB1F01965D0014D0E0 /* Sources */ = {
@@ -271,6 +346,7 @@
 		};
 		4A5130E81F01965D0014D0E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90AAAD1526E59A03C480A21D /* Pods-MidTermClicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HCCWVL286N;
@@ -284,6 +360,7 @@
 		};
 		4A5130E91F01965D0014D0E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HCCWVL286N;
