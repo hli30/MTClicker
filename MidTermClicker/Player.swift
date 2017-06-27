@@ -17,7 +17,9 @@ class Player: Object {
     dynamic var prestige:Int = 0
     dynamic var settings:Settings?
     dynamic var name: String?
-    let inventory = List<Upgrades>()
+    dynamic var level:Int = 1;
+    let inventory = List<Items>()
+    let properties = List<Buildings>()
     
     
     
