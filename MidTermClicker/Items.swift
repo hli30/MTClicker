@@ -11,11 +11,47 @@ import UIKit
 
 class Items: Upgrades {
     
-    convenience init(upgradeName:String, upgradeDescrip:String, upgradeIncMulti:Double, upgradeIcon:UIImage) {
+    enum ItemTypes {
+        case shovel
+        case sickle
+        case tractor
+    }
+    
+    convenience init(type : ItemTypes) {
         self.init()
-        name = upgradeName
-        upgradeDescription = upgradeDescrip
-        incomeMultiplier = upgradeIncMulti
-        iconImage = upgradeIcon
+        
+        switch type {
+        case .shovel:
+            makeShovel()
+        case .sickle:
+            makeSickle()
+        case .tractor:
+            makeTractor()
+        }
+
+    }
+    
+    func makeShovel() {
+        name = ""
+        upgradeDescription = "This is a farm"
+        iconImage = nil
+        incomeMultiplier = 0.10
+        price = 50
+    }
+    
+    func makeSickle() {
+        name = ""
+        upgradeDescription = "This is a farm"
+        iconImage = nil
+        incomeMultiplier = 0.20
+        price = 200
+    }
+    
+    func makeTractor() {
+        name = ""
+        upgradeDescription = "This is a farm"
+        iconImage = nil
+        incomeMultiplier = 0.30
+        price = 500
     }
 }

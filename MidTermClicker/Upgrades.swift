@@ -14,6 +14,7 @@ class Upgrades: Object {
     dynamic var upgradeDescription:String?
     dynamic var incomeMultiplier:Double = 0
     dynamic var iconImage:UIImage?
+    dynamic var price:Int = 0
   
 }
 
