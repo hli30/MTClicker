@@ -21,7 +21,12 @@ class Player: Object {
     let inventory = List<Items>()
     let properties = List<Buildings>()
     
-    
+    convenience init(playerName:String,playerAvatar:UIImage) {
+        self.init()
+        
+        name = playerName
+        avatar = playerAvatar
+    }
     
 }
 

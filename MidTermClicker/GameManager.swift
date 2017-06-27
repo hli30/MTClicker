@@ -11,12 +11,11 @@ import Foundation
 
 class GameManager {
     
-    
     func calculatePassiveIncome(player:Player){
         var passive:Double = 0
         
-        for buildings in player.properties {
-            passive += buildings.passiveIncome
+        for building in player.properties {
+            passive += building.getPassiveIncome()
         }
         
     }
@@ -27,8 +26,6 @@ class GameManager {
         for items in player.inventory {
             multiplierSum += items.incomeMultiplier
         }
-        
-        
         
     }
     
