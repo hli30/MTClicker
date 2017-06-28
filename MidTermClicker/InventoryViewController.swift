@@ -8,12 +8,18 @@
 
 import UIKit
 
-class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InventoryVCDelegate {
 
+//    protocol InventoryVCDelegate {
+//        func showNextVC()
+//    }
     
     @IBOutlet weak var inventoryTableView: UITableView!
     
     var player:Player?
+    let outputFormatter: OutPutFormatter?
+    var delegate<InventoryVCDelegate>?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +50,11 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let itemCell:ItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
         
-        itemCell.itemImageView.image = player?.inventory[indexPath.row].iconImage
-        itemCell.itemDescriptionTextView.text = player?.inventory[indexPath.row].upgradeDescription
+        var currentItem = player?.inventory[indexPath.row]
+        
+        
+        itemCell.itemImageView.image = currentItem?.iconImage
+        itemCell.itemDescriptionTextView.text = outputFormatter?.itemDetailsFormatter(item: currentItem)
         
         return itemCell
     }
