@@ -16,20 +16,30 @@ class BuildingDetailsViewController: UIViewController {
     @IBOutlet weak var nextDetailsTextView: UITextView!
     
     var building:Buildings?
+    let outputFormatter:OutPutFormatter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentDetailsTextView.text = building?.upgradeDescription
+        
+        currentDetailsTextView.text = outputFormatter?.buildingDetailsFormatter(building: building)
+        nextDetailsTextView.text =
+        buildingImageView.image = building?.iconImage
+        progressBarView.progressViewStyle = .bar
+        progressBarView.setProgress(building?.level, animated: true)
         
     }
     
     @IBAction func upgradeButtonPressed(_ sender: UIButton) {
+        building?.level ++
+        //save to realm
     }
     
     @IBAction func sellButtonPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
