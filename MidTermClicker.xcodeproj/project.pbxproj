@@ -25,6 +25,9 @@
 		FF6D7FE51F02D5FD006B6368 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */; };
 		FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6D7FE61F02D65D006B6368 /* Shop.storyboard */; };
 		FF6D7FE91F02D76D006B6368 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE81F02D76D006B6368 /* ShopCell.swift */; };
+		FF6D7FED1F031E51006B6368 /* Upgrade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6D7FEC1F031E51006B6368 /* Upgrade.storyboard */; };
+		FF6D7FEF1F031F14006B6368 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FEE1F031F14006B6368 /* UpgradeViewController.swift */; };
+		FF6D7FF11F031F1D006B6368 /* UpgradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FF01F031F1D006B6368 /* UpgradeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		FF6D7FE61F02D65D006B6368 /* Shop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		FF6D7FE81F02D76D006B6368 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		FF6D7FEC1F031E51006B6368 /* Upgrade.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Upgrade.storyboard; sourceTree = "<group>"; };
+		FF6D7FEE1F031F14006B6368 /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
+		FF6D7FF01F031F1D006B6368 /* UpgradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +104,12 @@
 				4A5130D61F01965D0014D0E0 /* Actions.sks */,
 				4A5130D81F01965D0014D0E0 /* GameScene.swift */,
 				4A5130DA1F01965D0014D0E0 /* GameViewController.swift */,
-				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
-				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
+				FF6D7FEC1F031E51006B6368 /* Upgrade.storyboard */,
+				FF6D7FEE1F031F14006B6368 /* UpgradeViewController.swift */,
+				FF6D7FF01F031F1D006B6368 /* UpgradeCell.swift */,
 				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
+				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
+				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
 				4A5130EA1F019EE70014D0E0 /* Player.swift */,
 				4A5130EE1F01B4BA0014D0E0 /* Settings.swift */,
 				4A5130EC1F01B2170014D0E0 /* Upgrades.swift */,
@@ -191,6 +200,7 @@
 				4A5130DE1F01965D0014D0E0 /* Main.storyboard in Resources */,
 				4A5130D51F01965D0014D0E0 /* GameScene.sks in Resources */,
 				4A5130E01F01965D0014D0E0 /* Assets.xcassets in Resources */,
+				FF6D7FED1F031E51006B6368 /* Upgrade.storyboard in Resources */,
 				4A5130E31F01965D0014D0E0 /* LaunchScreen.storyboard in Resources */,
 				4A5130D71F01965D0014D0E0 /* Actions.sks in Resources */,
 			);
@@ -252,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5130EF1F01B4BA0014D0E0 /* Settings.swift in Sources */,
+				FF6D7FF11F031F1D006B6368 /* UpgradeCell.swift in Sources */,
+				FF6D7FEF1F031F14006B6368 /* UpgradeViewController.swift in Sources */,
 				FF6D7FE31F01C4ED006B6368 /* GameManager.swift in Sources */,
 				FF6D7FE51F02D5FD006B6368 /* ShopViewController.swift in Sources */,
 				4A5130EB1F019EE70014D0E0 /* Player.swift in Sources */,

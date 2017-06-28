@@ -1,5 +1,5 @@
 //
-//  ShopViewController.swift
+//  UpgradeViewController.swift
 //  MidTermClicker
 //
 //  Created by Jimmy Hoang on 2017-06-27.
@@ -10,16 +10,17 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class ShopViewController:UIViewController {
+class UpgradeViewController:UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var player:Player?
-    var itemShop:[Items] = [Items.init(type: .shovel),
-                            Items.init(type: .sickle),
-                            Items.init(type: .tractor)]
+    var buildingShop:[Buildings] = [Buildings.init(type: .farm),
+                                    Buildings.init(type: .garden),
+                                    Buildings.init(type: .chickenCoop)]
     
     override func viewDidLoad() {
 
+        
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -27,18 +28,18 @@ class ShopViewController:UIViewController {
     }
 }
 
-extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopCell", for: indexPath) as! ShopCell
-        let item = self.itemShop[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buildingUpgradeCell", for: indexPath) as! UpgradeCell
+        let building = self.buildingShop[indexPath.row]
         
-        if (player?.inventory.contains(item))! {
+        if (player?.properties.contains(building))! {
             cell.tintColor = UIColor.gray
         }
         
-        cell.itemDescriptionTextView.text = item.upgradeDescription
-        cell.itemImageView.image = item.iconImage
+        cell.buildingDescriptionTextField.text = building.upgradeDescription
+        cell.buildingImageView.image = building.iconImage
         
         return cell
     }
@@ -48,15 +49,15 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.itemShop.count
+        return self.buildingShop.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                   message: "\(self.itemShop[indexPath.row].price) will be deducted",
-                                            preferredStyle: UIAlertControllerStyle.actionSheet)
+                                                     message: "\(self.buildingShop[indexPath.row].price) will be deducted",
+            preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        if (player?.money)! > self.itemShop[indexPath.row].price {
+        if (player?.money)! > self.buildingShop[indexPath.row].price {
             alertController.addAction(UIAlertAction.init(title: "Confirm",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(alertController:UIAlertAction) in
@@ -64,7 +65,7 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
                                                             let realm = try! Realm()
                                                             
                                                             try! realm.write {
-                                                                self.player?.inventory.append(self.itemShop[indexPath.row])
+                                                                self.player?.properties.append(self.buildingShop[indexPath.row])
                                                             }
                                                             
             }))
@@ -75,11 +76,11 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
                                                             
             }))
         }
-
-            alertController.addAction(UIAlertAction.init(title: "Cancel",
-                                                         style: UIAlertActionStyle.cancel,
-                                                       handler: { (alertController:UIAlertAction) in
-            
+        
+        alertController.addAction(UIAlertAction.init(title: "Cancel",
+                                                     style: UIAlertActionStyle.cancel,
+                                                     handler: { (alertController:UIAlertAction) in
+                                                        
         }))
         
         
