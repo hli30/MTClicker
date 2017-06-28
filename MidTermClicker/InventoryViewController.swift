@@ -9,6 +9,7 @@
 import UIKit
 
 class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     
     @IBOutlet weak var inventoryTableView: UITableView!
     
@@ -16,6 +17,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     let outputFormatter: OutPutFormatter? = nil
 //    var delegate:InventoryVCDelegate?
     
+
     
     
     override func viewDidLoad() {
