@@ -14,7 +14,10 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var inventoryTableView: UITableView!
     
     var player:Player?
-    let outputFormatter: OutPutFormatter?
+    let outputFormatter: OutPutFormatter? = nil
+//    var delegate:InventoryVCDelegate?
+    
+
     
     
     override func viewDidLoad() {
@@ -46,11 +49,11 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let itemCell:ItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
         
-        var currentItem = player?.inventory[indexPath.row]
+        let currentItem = player?.inventory[indexPath.row]
         
         
         itemCell.itemImageView.image = currentItem?.iconImage
-        itemCell.itemDescriptionTextView.text = outputFormatter?.itemDetailsFormatter(item: currentItem)
+        itemCell.itemDescriptionTextView.text = outputFormatter?.itemDetailsFormatter(item: currentItem!)
         
         return itemCell
     }

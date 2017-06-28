@@ -11,20 +11,32 @@ import Foundation
 class OutPutFormatter {
     
     func buildingDetailsFormatter(building:Buildings) -> String {
-        var name = building.name
-        var buildingDescription = building.upgradeDescription
-        var buildingPassiveIncome = "Passive income: \(building.passiveIncome)"
+        let name = building.name
+        let buildingDescription = building.upgradeDescription
+        let buildingPassiveIncome = "Passive income: \(building.passiveIncome)"
         
-        var outputString = "\(name)\n\(buildingDescription)\n\(buildingPassiveIncome)"
+        let outputString = "\(String(describing: name))\n\(String(describing: buildingDescription))\n\(buildingPassiveIncome)"
         
+        return outputString
+    }
+    
+    func nextLvlBuildingDetailsFormatter(building:Buildings) -> String {
+        let name = building.name
+        let buildingDescription = building.upgradeDescription
+        let nextLvlPassiveIncome = building.passiveIncome * 2
+        let buildingPassiveIncome = "Passive income: \(nextLvlPassiveIncome)"
+        
+        let outputString = "\(String(describing: name))\n\(String(describing: buildingDescription))\n\(buildingPassiveIncome)"
+        
+        return outputString
     }
     
     func itemDetailsFormatter(item:Items) -> String {
-        var name = item.name
-        var itemDescription = item.upgradeDescription
-        var itemMultiplier = "Income multiplier: \(itemMultiplier)"
+        let name = item.name
+        let itemDescription = item.upgradeDescription
+        let itemMultiplier = "Income multiplier: \(item.incomeMultiplier)"
         
-        var outputString = "\(name)\n\(itemDescription)\n\(itemMultiplier)"
+        let outputString = "\(String(describing: name))\n\(String(describing: itemDescription))\n\(itemMultiplier)"
         
         return outputString
     }
