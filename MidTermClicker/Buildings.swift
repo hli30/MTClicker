@@ -19,11 +19,10 @@ public func ^^ (radix: Double, power: Double) -> Double {
 class Buildings: Upgrades {
     
     dynamic var passiveIncome:Double = 0
-    dynamic var level:Double = 0;
+    dynamic var level:Double = 1;
     let costMultiplier = 1.10
     
-    
-    
+
     enum BuildingTypes {
         case garden,farm,chickenCoop
     }
@@ -48,7 +47,6 @@ class Buildings: Upgrades {
         iconImage = nil
         passiveIncome = 100
         price = Int(basePrice * (costMultiplier ^^ level))
-        level = 1
     }
     
     func makeGarden() {
@@ -58,7 +56,6 @@ class Buildings: Upgrades {
         iconImage = nil
         passiveIncome = 200
         price = Int(basePrice * (costMultiplier ^^ level))
-        level = 1
     }
     
     func makeChickenCoop() {
@@ -68,7 +65,10 @@ class Buildings: Upgrades {
         iconImage = nil
         passiveIncome = 300
         price = Int(basePrice * (costMultiplier ^^ level))
-        level = 1
+    }
+    
+    func getPassiveIncome() -> Double {
+        return self.passiveIncome * self.level * 0.25
     }
     
 }
