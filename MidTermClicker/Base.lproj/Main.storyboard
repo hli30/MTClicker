@@ -24,22 +24,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="V8u-Ck-hrd"/>
                     <connections>
-                        <segue destination="WKR-yU-LMc" kind="presentation" identifier="showShop" id="0Oo-fX-G0c"/>
                         <segue destination="k9r-ED-PyZ" kind="presentation" identifier="showInventory" id="U9C-od-J85"/>
                         <segue destination="eYY-XT-aOi" kind="presentation" identifier="showSettings" id="iVC-bt-6jq"/>
+                        <segue destination="wcN-HN-BKZ" kind="presentation" id="xLA-hB-47g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="Iah-f8-uCI">
+        <!--Shop-->
+        <scene sceneID="OyS-zi-hsq">
             <objects>
-                <viewControllerPlaceholder id="WKR-yU-LMc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bip-cb-uQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Shop" id="wcN-HN-BKZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQU-uA-aMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="685"/>
+            <point key="canvasLocation" x="-25" y="685"/>
         </scene>
         <!--InventoryStoryBoard-->
         <scene sceneID="8QP-yv-wqM">

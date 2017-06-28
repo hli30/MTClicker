@@ -8,17 +8,13 @@
 
 import UIKit
 
-class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InventoryVCDelegate {
+class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-//    protocol InventoryVCDelegate {
-//        func showNextVC()
-//    }
     
     @IBOutlet weak var inventoryTableView: UITableView!
     
     var player:Player?
     let outputFormatter: OutPutFormatter?
-    var delegate<InventoryVCDelegate>?
     
     
     override func viewDidLoad() {
