@@ -120,9 +120,6 @@
 				4A5130D61F01965D0014D0E0 /* Actions.sks */,
 				4A5130D81F01965D0014D0E0 /* GameScene.swift */,
 				4A5130DA1F01965D0014D0E0 /* GameViewController.swift */,
-				FF6D7FEC1F031E51006B6368 /* Upgrade.storyboard */,
-				FF6D7FEE1F031F14006B6368 /* UpgradeViewController.swift */,
-				FF6D7FF01F031F1D006B6368 /* UpgradeCell.swift */,
 				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
 				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
 				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
@@ -134,6 +131,7 @@
 				FF6D7FE21F01C4ED006B6368 /* GameManager.swift */,
 				4A5130DC1F01965D0014D0E0 /* Main.storyboard */,
 				4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */,
+				FF6D7FF31F0360E3006B6368 /* UpgradeVC */,
 				FF6D7FF21F035F81006B6368 /* ShopVC */,
 				4A5130FC1F0309D50014D0E0 /* InventoryVC */,
 				4A5130FD1F0309EF0014D0E0 /* SettingsVC */,
@@ -185,11 +183,18 @@
 		FF6D7FF21F035F81006B6368 /* ShopVC */ = {
 			isa = PBXGroup;
 			children = (
-				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
-				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
-				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
 			);
 			name = ShopVC;
+			sourceTree = "<group>";
+		};
+		FF6D7FF31F0360E3006B6368 /* UpgradeVC */ = {
+			isa = PBXGroup;
+			children = (
+				FF6D7FEC1F031E51006B6368 /* Upgrade.storyboard */,
+				FF6D7FEE1F031F14006B6368 /* UpgradeViewController.swift */,
+				FF6D7FF01F031F1D006B6368 /* UpgradeCell.swift */,
+			);
+			name = UpgradeVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
