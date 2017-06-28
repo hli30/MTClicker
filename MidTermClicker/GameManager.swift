@@ -31,8 +31,10 @@ class GameManager {
     
     func getTapIncome(level:Double) -> Double {
 
+        let steepnessOfCurve = 1.05
+        let tapIncome = 1 - 1 / ((steepnessOfCurve)^^level)
         
-        return 0.5 * level
+        return tapIncome
     }
     
 

@@ -16,21 +16,22 @@ class BuildingDetailsViewController: UIViewController {
     @IBOutlet weak var nextDetailsTextView: UITextView!
     
     var building:Buildings?
-    let outputFormatter:OutPutFormatter?
+    let outputFormatter:OutPutFormatter? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentDetailsTextView.text = outputFormatter?.buildingDetailsFormatter(building: building)
-        nextDetailsTextView.text =
+        currentDetailsTextView.text = outputFormatter?.buildingDetailsFormatter(building: building!)
+        nextDetailsTextView.text = outputFormatter?.nextLvlBuildingDetailsFormatter(building: building!)
         buildingImageView.image = building?.iconImage
         progressBarView.progressViewStyle = .bar
-        progressBarView.setProgress(building?.level, animated: true)
+        progressBarView.setProgress(Float((building?.level)!), animated: true)
         
     }
     
     @IBAction func upgradeButtonPressed(_ sender: UIButton) {
-        building?.level ++
+        building?.level += 1
+        progressBarView.setProgress(Float((building?.level)!), animated: true)
         //save to realm
     }
     

@@ -120,9 +120,6 @@
 				4A5130D61F01965D0014D0E0 /* Actions.sks */,
 				4A5130D81F01965D0014D0E0 /* GameScene.swift */,
 				4A5130DA1F01965D0014D0E0 /* GameViewController.swift */,
-				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
-				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
-				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
 				4A5130EA1F019EE70014D0E0 /* Player.swift */,
 				4A5130EE1F01B4BA0014D0E0 /* Settings.swift */,
 				4A5130EC1F01B2170014D0E0 /* Upgrades.swift */,
@@ -183,6 +180,9 @@
 		FF6D7FF21F035F81006B6368 /* ShopVC */ = {
 			isa = PBXGroup;
 			children = (
+				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
+				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
+				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
 			);
 			name = ShopVC;
 			sourceTree = "<group>";
