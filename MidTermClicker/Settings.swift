@@ -10,7 +10,6 @@ import RealmSwift
 
 class Settings: Object {
     
-    dynamic var musicToggle:Bool = true
-    dynamic var soundFXToggle:Bool = true
-
+    dynamic var musicVolume:Float = 50
+    dynamic var soundFXVolume:Float = 50
 }
