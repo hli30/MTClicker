@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        guard let image = UIImage.init(named: "example")  else {
+            abort()
+        }
+        
+        let demoPlayer = Player.init(playerName: "example", playerAvatar: image)
+        
+        let realm = try! Realm()
+
+        try! realm.write {
+            realm.add(demoPlayer)
+        }
+        
+        
         return true
     }
 
