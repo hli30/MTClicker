@@ -114,9 +114,6 @@
 				4A5130D61F01965D0014D0E0 /* Actions.sks */,
 				4A5130D81F01965D0014D0E0 /* GameScene.swift */,
 				4A5130DA1F01965D0014D0E0 /* GameViewController.swift */,
-				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
-				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
-				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
 				4A5130EA1F019EE70014D0E0 /* Player.swift */,
 				4A5130EE1F01B4BA0014D0E0 /* Settings.swift */,
 				4A5130EC1F01B2170014D0E0 /* Upgrades.swift */,
@@ -125,6 +122,7 @@
 				FF6D7FE21F01C4ED006B6368 /* GameManager.swift */,
 				4A5130DC1F01965D0014D0E0 /* Main.storyboard */,
 				4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */,
+				FF6D7FF21F035F81006B6368 /* ShopVC */,
 				4A5130FC1F0309D50014D0E0 /* InventoryVC */,
 				4A5130FD1F0309EF0014D0E0 /* SettingsVC */,
 				4A5131041F030E910014D0E0 /* BuildingDetailsVC */,
@@ -170,6 +168,16 @@
 				B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF6D7FF21F035F81006B6368 /* ShopVC */ = {
+			isa = PBXGroup;
+			children = (
+				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
+				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
+				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
+			);
+			name = ShopVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
