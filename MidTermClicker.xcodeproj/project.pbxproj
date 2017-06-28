@@ -21,6 +21,10 @@
 		4A5130F11F01B8540014D0E0 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5130F01F01B8540014D0E0 /* Items.swift */; };
 		4A5130F31F01B88A0014D0E0 /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5130F21F01B88A0014D0E0 /* Buildings.swift */; };
 		8E591FE2F0EB65DE995734E9 /* Pods_MidTermClicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */; };
+		FF6D7FE31F01C4ED006B6368 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE21F01C4ED006B6368 /* GameManager.swift */; };
+		FF6D7FE51F02D5FD006B6368 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */; };
+		FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6D7FE61F02D65D006B6368 /* Shop.storyboard */; };
+		FF6D7FE91F02D76D006B6368 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE81F02D76D006B6368 /* ShopCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		90AAAD1526E59A03C480A21D /* Pods-MidTermClicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.debug.xcconfig"; sourceTree = "<group>"; };
 		B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.release.xcconfig"; sourceTree = "<group>"; };
 		C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MidTermClicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6D7FE21F01C4ED006B6368 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		FF6D7FE61F02D65D006B6368 /* Shop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
+		FF6D7FE81F02D76D006B6368 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +98,15 @@
 				4A5130D61F01965D0014D0E0 /* Actions.sks */,
 				4A5130D81F01965D0014D0E0 /* GameScene.swift */,
 				4A5130DA1F01965D0014D0E0 /* GameViewController.swift */,
+				FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */,
+				FF6D7FE81F02D76D006B6368 /* ShopCell.swift */,
+				FF6D7FE61F02D65D006B6368 /* Shop.storyboard */,
 				4A5130EA1F019EE70014D0E0 /* Player.swift */,
 				4A5130EE1F01B4BA0014D0E0 /* Settings.swift */,
 				4A5130EC1F01B2170014D0E0 /* Upgrades.swift */,
 				4A5130F01F01B8540014D0E0 /* Items.swift */,
 				4A5130F21F01B88A0014D0E0 /* Buildings.swift */,
+				FF6D7FE21F01C4ED006B6368 /* GameManager.swift */,
 				4A5130DC1F01965D0014D0E0 /* Main.storyboard */,
 				4A5130DF1F01965D0014D0E0 /* Assets.xcassets */,
 				4A5130E11F01965D0014D0E0 /* LaunchScreen.storyboard */,
@@ -175,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */,
 				4A5130DE1F01965D0014D0E0 /* Main.storyboard in Resources */,
 				4A5130D51F01965D0014D0E0 /* GameScene.sks in Resources */,
 				4A5130E01F01965D0014D0E0 /* Assets.xcassets in Resources */,
@@ -239,10 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5130EF1F01B4BA0014D0E0 /* Settings.swift in Sources */,
+				FF6D7FE31F01C4ED006B6368 /* GameManager.swift in Sources */,
+				FF6D7FE51F02D5FD006B6368 /* ShopViewController.swift in Sources */,
 				4A5130EB1F019EE70014D0E0 /* Player.swift in Sources */,
 				4A5130D91F01965D0014D0E0 /* GameScene.swift in Sources */,
 				4A5130F31F01B88A0014D0E0 /* Buildings.swift in Sources */,
 				4A5130DB1F01965D0014D0E0 /* GameViewController.swift in Sources */,
+				FF6D7FE91F02D76D006B6368 /* ShopCell.swift in Sources */,
 				4A5130F11F01B8540014D0E0 /* Items.swift in Sources */,
 				4A5130ED1F01B2170014D0E0 /* Upgrades.swift in Sources */,
 				4A5130D31F01965D0014D0E0 /* AppDelegate.swift in Sources */,
