@@ -23,6 +23,7 @@ class Buildings: Upgrades {
     let costMultiplier = 1.10
     
     
+    
     enum BuildingTypes {
         case garden,farm,chickenCoop
     }
