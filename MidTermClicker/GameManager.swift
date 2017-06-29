@@ -48,6 +48,7 @@ class GameManager {
         round(multipliedIncome)
         return multipliedIncome
     }
-
+    
+    
     
 }

@@ -10,6 +10,8 @@ import Foundation
 
 class OutPutFormatter {
     
+    let gameManager = GameManager.init()
+    
     init() {
         
     }
@@ -45,4 +47,15 @@ class OutPutFormatter {
         return outputString
     }
     
+    func playerStatsFormatter(user:Player) -> String {
+        
+        let nextLevelTapIncome = gameManager.getTapIncome(level: (Double(user.level + 1)), player: user)
+        round(nextLevelTapIncome)
+        let nextLevelCost = "Cost for next level: \(Int(user.levelCost))"
+        let nextLevelTapIncomeString = "Upgrade per tap income to: \(Int(nextLevelTapIncome))"
+        
+        let outputString = "\(nextLevelCost)\n\(nextLevelTapIncomeString)"
+        
+        return outputString
+    }
 }
