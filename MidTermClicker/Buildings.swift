@@ -44,7 +44,7 @@ class Buildings: Upgrades {
         let basePrice:Double = 500
         name = "Farm"
         upgradeDescription = "This is a farm"
-        iconImage = nil
+        iconImage = self.convertImageToData(imageName: "Farm")
         passiveIncome = 100
         price = Int(basePrice * (costMultiplier ^^ level))
     }
@@ -53,7 +53,7 @@ class Buildings: Upgrades {
         let basePrice:Double = 500
         name = "Garden"
         upgradeDescription = "This is a garden"
-        iconImage = nil
+        iconImage = self.convertImageToData(imageName: "Garden")
         passiveIncome = 200
         price = Int(basePrice * (costMultiplier ^^ level))
     }
@@ -62,7 +62,7 @@ class Buildings: Upgrades {
         let basePrice:Double = 500
         name = "Chicken Coop"
         upgradeDescription = "This is a chicken coop"
-        iconImage = nil
+        iconImage = self.convertImageToData(imageName: "ChickenCoop")
         passiveIncome = 300
         price = Int(basePrice * (costMultiplier ^^ level))
     }

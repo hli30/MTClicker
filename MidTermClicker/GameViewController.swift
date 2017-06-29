@@ -9,17 +9,29 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import RealmSwift
 
 class GameViewController: UIViewController {
     var player:Player?
+    var delegate:GameSceneDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        
+        let playerQuery = realm.objects(Player.self)
+        
+        self.player = playerQuery.first
+        
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+//             Load the SKScene from 'GameScene.sks'
+            if let scene = GameScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                
+                
+                // Delegate
+                scene.controllerDelegate = self
                 
                 // Pass player to scene
                 scene.userData = NSMutableDictionary()
@@ -28,6 +40,7 @@ class GameViewController: UIViewController {
                 // Present the scene
                 view.presentScene(scene)
             }
+            
             
             view.ignoresSiblingOrder = true
             
@@ -39,7 +52,7 @@ class GameViewController: UIViewController {
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -59,4 +72,44 @@ class GameViewController: UIViewController {
         return true
     }
     
+}
+
+// MARK: GameSceneDelegate
+extension GameViewController: GameSceneDelegate {
+    func playerTapSettings() {
+        self.performSegue(withIdentifier: "showSettings", sender: self)
+    }
+    func playerTapInventory() {
+        self.performSegue(withIdentifier: "showInventory", sender: self)
+    }
+    func playerTapBuildings() {
+        
+    }
+    func playerTapShop() {
+        print("shop pressed")
+        self.performSegue(withIdentifier: "showShop", sender: self)
+    }
+}
+
+// MARK: Segue
+extension GameViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showShop" {
+            if let destinationVC = segue.destination as? ShopViewController {
+                destinationVC.player = self.player
+            }
+        }
+        
+        if segue.identifier == "showInventory" {
+            if let destinationVC = segue.destination as? InventoryViewController {
+                destinationVC.player = self.player
+            }
+        }
+        
+        if segue.identifier == "showSettings" {
+            if let destinationVC = segue.destination as? SettingsViewController {
+                destinationVC.player = self.player
+            }
+        }
+    }
 }

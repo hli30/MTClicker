@@ -13,7 +13,7 @@ import RealmSwift
 class Player: Object {
 
     dynamic var money:Int = 0
-    dynamic var avatar:UIImage?
+    dynamic var avatar:Data?
     dynamic var prestige:Int = 0
     dynamic var settings:Settings?
     dynamic var name: String?
@@ -21,7 +21,7 @@ class Player: Object {
     let inventory = List<Items>()
     let properties = List<Buildings>()
     
-    convenience init(playerName:String,playerAvatar:UIImage) {
+    convenience init(playerName:String,playerAvatar:Data) {
         self.init()
         
         name = playerName

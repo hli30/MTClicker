@@ -14,11 +14,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var inventoryTableView: UITableView!
     
     var player:Player?
-    let outputFormatter: OutPutFormatter? = nil
-//    var delegate:InventoryVCDelegate?
-    
-
-    
+    let outputFormatter = OutPutFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +48,8 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
         let currentItem = player?.inventory[indexPath.row]
         
         
-        itemCell.itemImageView.image = currentItem?.iconImage
-        itemCell.itemDescriptionTextView.text = outputFormatter?.itemDetailsFormatter(item: currentItem!)
+//        itemCell.itemImageView.image = currentItem?.iconImage
+        itemCell.itemDescriptionTextView.text = outputFormatter.itemDetailsFormatter(item: currentItem!)
         
         return itemCell
     }

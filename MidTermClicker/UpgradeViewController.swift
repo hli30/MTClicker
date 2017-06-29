@@ -14,9 +14,9 @@ class UpgradeViewController:UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var player:Player?
-    var buildingShop:[Buildings] = [Buildings.init(type: .farm),
-                                    Buildings.init(type: .garden),
-                                    Buildings.init(type: .chickenCoop)]
+    var buildingShop:[Buildings] = [Buildings(type: .farm),
+                                    Buildings(type: .garden),
+                                    Buildings(type: .chickenCoop)]
     
     override func viewDidLoad() {
 
@@ -39,7 +39,7 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         cell.buildingDescriptionTextField.text = building.upgradeDescription
-        cell.buildingImageView.image = building.iconImage
+//        cell.buildingImageView.image = building.iconImage
         
         return cell
     }
