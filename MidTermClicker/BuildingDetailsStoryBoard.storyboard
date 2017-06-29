@@ -37,9 +37,8 @@
                                                     <action selector="closeButtonPressed:" destination="YXU-Nm-f9m" eventType="touchUpInside" id="URZ-hG-DmR"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Building Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-Qh-a9n">
-                                                <rect key="frame" x="91" y="30" width="140" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-Qh-a9n">
+                                                <rect key="frame" x="92.5" y="28.5" width="137" height="24"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -47,11 +46,13 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="IF7-uf-IzL"/>
+                                            <constraint firstItem="hpb-Qh-a9n" firstAttribute="centerY" secondItem="yPf-2D-jI2" secondAttribute="centerY" id="KGe-6T-P8M"/>
                                             <constraint firstAttribute="trailing" secondItem="7tq-tu-we2" secondAttribute="trailing" constant="20" id="MTp-el-cnd"/>
                                             <constraint firstAttribute="bottom" secondItem="eIX-Rh-g2L" secondAttribute="bottom" id="OAm-Nd-Rg3"/>
                                             <constraint firstAttribute="trailing" secondItem="eIX-Rh-g2L" secondAttribute="trailing" id="UEZ-Zb-KdI"/>
                                             <constraint firstItem="eIX-Rh-g2L" firstAttribute="leading" secondItem="yPf-2D-jI2" secondAttribute="leading" id="g0A-yy-FZ7"/>
                                             <constraint firstItem="eIX-Rh-g2L" firstAttribute="top" secondItem="yPf-2D-jI2" secondAttribute="top" id="hfF-Ob-h95"/>
+                                            <constraint firstItem="hpb-Qh-a9n" firstAttribute="centerX" secondItem="yPf-2D-jI2" secondAttribute="centerX" id="pU2-H9-H5f"/>
                                             <constraint firstItem="7tq-tu-we2" firstAttribute="top" secondItem="yPf-2D-jI2" secondAttribute="top" constant="8" id="tLH-ej-j1L"/>
                                         </constraints>
                                     </view>

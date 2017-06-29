@@ -89,21 +89,22 @@
                                                     <action selector="buttonPressed:" destination="bGQ-0L-9lI" eventType="touchUpInside" id="J0w-G5-zpt"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upgrades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsf-Us-hfX">
-                                                <rect key="frame" x="118" y="24" width="86" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsf-Us-hfX">
+                                                <rect key="frame" x="120.5" y="28.5" width="81.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Hsf-Us-hfX" firstAttribute="centerY" secondItem="snO-Ha-Zby" secondAttribute="centerY" id="Hbo-C6-uD6"/>
                                             <constraint firstAttribute="height" constant="80" id="MqP-Yw-u2M"/>
                                             <constraint firstAttribute="trailing" secondItem="3Df-5B-btN" secondAttribute="trailing" id="Yxc-LN-DXG"/>
                                             <constraint firstAttribute="trailing" secondItem="tDh-dF-DDe" secondAttribute="trailing" constant="20" id="dXc-57-XXo"/>
                                             <constraint firstItem="3Df-5B-btN" firstAttribute="leading" secondItem="snO-Ha-Zby" secondAttribute="leading" id="dd7-0V-z6H"/>
                                             <constraint firstItem="3Df-5B-btN" firstAttribute="top" secondItem="snO-Ha-Zby" secondAttribute="top" id="juh-Co-iPL"/>
                                             <constraint firstAttribute="bottom" secondItem="3Df-5B-btN" secondAttribute="bottom" id="nLT-mD-VT5"/>
+                                            <constraint firstItem="Hsf-Us-hfX" firstAttribute="centerX" secondItem="snO-Ha-Zby" secondAttribute="centerX" id="t4G-Ac-syF"/>
                                             <constraint firstItem="tDh-dF-DDe" firstAttribute="top" secondItem="snO-Ha-Zby" secondAttribute="top" constant="8" id="tGj-e1-eSV"/>
                                         </constraints>
                                     </view>

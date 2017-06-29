@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1788231F057AF600236275 /* PlayerStatsStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1788221F057AF600236275 /* PlayerStatsStoryBoard.storyboard */; };
+		4A1788261F057BF900236275 /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1788251F057BF900236275 /* PlayerStatsViewController.swift */; };
 		4A5130D31F01965D0014D0E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5130D21F01965D0014D0E0 /* AppDelegate.swift */; };
 		4A5130D51F01965D0014D0E0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130D41F01965D0014D0E0 /* GameScene.sks */; };
 		4A5130D71F01965D0014D0E0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130D61F01965D0014D0E0 /* Actions.sks */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A1788221F057AF600236275 /* PlayerStatsStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerStatsStoryBoard.storyboard; sourceTree = "<group>"; };
+		4A1788251F057BF900236275 /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		4A5130CF1F01965D0014D0E0 /* MidTermClicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidTermClicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5130D21F01965D0014D0E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5130D41F01965D0014D0E0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4A1788241F057B0500236275 /* PlayerStatsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4A1788221F057AF600236275 /* PlayerStatsStoryBoard.storyboard */,
+				4A1788251F057BF900236275 /* PlayerStatsViewController.swift */,
+			);
+			name = PlayerStatsVC;
+			sourceTree = "<group>";
+		};
 		4A5130C61F01965D0014D0E0 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 				4A5130DC1F01965D0014D0E0 /* Main.storyboard */,
 				4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */,
 				4AB7696F1F0477F8009C3B20 /* BackgroundTileSet */,
+				4A1788241F057B0500236275 /* PlayerStatsVC */,
 				FF6D7FF31F0360E3006B6368 /* UpgradeVC */,
 				FF6D7FF21F035F81006B6368 /* ShopVC */,
 				4A5130FC1F0309D50014D0E0 /* InventoryVC */,
@@ -278,6 +292,7 @@
 				4A5131011F030E420014D0E0 /* BuildingDetailsStoryBoard.storyboard in Resources */,
 				FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */,
 				4A5130DE1F01965D0014D0E0 /* Main.storyboard in Resources */,
+				4A1788231F057AF600236275 /* PlayerStatsStoryBoard.storyboard in Resources */,
 				4A5130D51F01965D0014D0E0 /* GameScene.sks in Resources */,
 				4A5130F91F02E6670014D0E0 /* InventoryStoryBoard.storyboard in Resources */,
 				4A5130FB1F02E8870014D0E0 /* SettingsStoryBoard.storyboard in Resources */,
@@ -344,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5130EF1F01B4BA0014D0E0 /* Settings.swift in Sources */,
+				4A1788261F057BF900236275 /* PlayerStatsViewController.swift in Sources */,
 				FF6D7FF11F031F1D006B6368 /* UpgradeCell.swift in Sources */,
 				FF6D7FEF1F031F14006B6368 /* UpgradeViewController.swift in Sources */,
 				4A5131031F030E780014D0E0 /* BuildingDetailsViewController.swift in Sources */,
