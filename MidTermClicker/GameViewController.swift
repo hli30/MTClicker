@@ -87,6 +87,9 @@ extension GameViewController: GameSceneDelegate {
     func playerTapShop() {
         self.performSegue(withIdentifier: "showShop", sender: self)
     }
+    func playerTapAvatar() {
+        self.performSegue(withIdentifier: "showPlayerStats", sender: self)
+    }
 }
 
 // MARK: Segue

@@ -81,7 +81,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Tr4-Et-tpO" firstAttribute="leading" secondItem="iVc-VW-dzy" secondAttribute="leading" constant="26" id="0ep-wm-BeL"/>
                             <constraint firstItem="ZcV-wY-5yz" firstAttribute="top" secondItem="Tr4-Et-tpO" secondAttribute="bottom" constant="361" id="9Zz-aZ-6Z3"/>

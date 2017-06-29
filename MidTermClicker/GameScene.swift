@@ -15,6 +15,7 @@ protocol GameSceneDelegate:class{
     func playerTapInventory()
     func playerTapBuildings()
     func playerTapShop()
+    func playerTapAvatar()
 }
 
 class GameScene: SKScene {
@@ -87,8 +88,7 @@ class GameScene: SKScene {
                     self.player.money = money
                 }
                 self.controllerDelegate?.playerTapShop()
-                
-                
+
             } else if name == "itemButton" {
                 try! realm.write {
                     self.player.money = money
@@ -106,6 +106,13 @@ class GameScene: SKScene {
                     self.player.money = money
                 }
                 self.controllerDelegate?.playerTapBuildings()
+                
+            } else if name == "avatarNode" {
+                try! realm.write {
+                    self.player.money = money
+                }
+                self.controllerDelegate?.playerTapAvatar()
+                
             } else {
                 money += gameManager.getTapIncome(level: Double((self.player.level)), player: self.player)
                 self.moneyLabel.text = String(Int(self.money))

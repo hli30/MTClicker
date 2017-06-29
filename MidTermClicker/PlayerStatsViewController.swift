@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PlayerStatsViewController: UIViewController {
 
@@ -28,7 +29,14 @@ class PlayerStatsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func levelUpButtonPressed(_ sender: UIButton) {
-        player.level += 1 
+        let realm = try! Realm()
+        
+        let newMoney = self.player.money - self.player.levelCost
+
+        try! realm.write {
+            self.player.level += 1
+            self.player.money = newMoney
+        }
     }
     @IBAction func closeButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
