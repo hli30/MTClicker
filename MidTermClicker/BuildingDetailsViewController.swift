@@ -16,7 +16,7 @@ class BuildingDetailsViewController: UIViewController {
     @IBOutlet weak var currentDetailsTextView: UITextView!
     @IBOutlet weak var nextDetailsTextView: UITextView!
     
-    var player:Player?
+    var player:Player!
     var building:Buildings?
     let outputFormatter = OutPutFormatter()
     
@@ -32,7 +32,7 @@ class BuildingDetailsViewController: UIViewController {
         let realm = try! Realm()
         
         try! realm.write {
-            self.player?.properties.append(self.building!)
+            self.player.properties.append(self.building!)
         }
         
         self.reloadView()
@@ -49,7 +49,12 @@ class BuildingDetailsViewController: UIViewController {
     func reloadView() {
         currentDetailsTextView.text = outputFormatter.buildingDetailsFormatter(building: building!)
         nextDetailsTextView.text = outputFormatter.nextLvlBuildingDetailsFormatter(building: building!)
-//        buildingImageView.image = building?.iconImage
+        
+        guard let image = UIImage.convertDataToImage(dataToBeConverted: (building?.iconImage)!) else {
+            return
+        }
+        
+        buildingImageView.image = image
         progressBarView.progressViewStyle = .bar
         progressBarView.setProgress(Float((building?.level)!), animated: true)
     }

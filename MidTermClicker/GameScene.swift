@@ -20,22 +20,28 @@ protocol GameSceneDelegate:class{
 class GameScene: SKScene {
     
     weak var controllerDelegate:GameSceneDelegate?
-    var player:Player?
+    var player:Player!
     let gameManager = GameManager()
-    var money = 0
-    var moneyLabel:SKLabelNode?
-    var dirtTileNode:SKTileMapNode?
+    var money:Double = 0
+    var moneyLabel:SKLabelNode!
+    var dirtTileNode:SKTileMapNode!
+    var levelLabel:SKLabelNode!
+    
+    override func sceneDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMoney), name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
+    }
   
     override func didMove(to view: SKView)
     {
-        self.player?.money = money
         if let playerFromUserData = self.userData?.value(forKey: "player") {
             self.player = (playerFromUserData as! Player)
         }
-           
+        money = self.player.money
+
+        
         let avatar = self.childNode(withName: "avatarNode") as? SKSpriteNode
         
-        guard let avatarData = self.player?.avatar else {
+        guard let avatarData = self.player.avatar else {
             return
         }
         
@@ -47,7 +53,10 @@ class GameScene: SKScene {
         
         self.dirtTileNode = self.childNode(withName: "dirtTileNode") as? SKTileMapNode
         
-        self.moneyLabel = self.dirtTileNode?.childNode(withName: "money") as? SKLabelNode
+        self.moneyLabel = self.dirtTileNode.childNode(withName: "money") as? SKLabelNode
+        self.levelLabel = self.dirtTileNode.childNode(withName: "level") as? SKLabelNode
+        self.levelLabel.text = "Level \(String(describing: self.player.level))"
+        self.moneyLabel.text = String(Int(self.money))
     }
     
     
@@ -74,38 +83,37 @@ class GameScene: SKScene {
         {
             if name == "shopButton"
             {
-                print("tapnode shopbutton")
                 try! realm.write {
-                    self.player?.money = money
+                    self.player.money = money
                 }
                 self.controllerDelegate?.playerTapShop()
                 
                 
             } else if name == "itemButton" {
-                print("tapnode itembutton")
                 try! realm.write {
-                    self.player?.money = money
+                    self.player.money = money
                 }
                 self.controllerDelegate?.playerTapInventory()
                 
             } else if name == "settingsButton" {
-                print("tapnode settingsbutton")
                 try! realm.write {
-                    self.player?.money = money
+                    self.player.money = money
                 }
                 self.controllerDelegate?.playerTapSettings()
                 
             } else if name == "slot1" || name == "slot2" || name == "slot3" {
-                print("tapnode slot1/2/3")
                 try! realm.write {
-                    self.player?.money = money
+                    self.player.money = money
                 }
                 self.controllerDelegate?.playerTapBuildings()
+            } else {
+                money += gameManager.getTapIncome(level: Double((self.player.level)), player: self.player)
+                self.moneyLabel.text = String(Int(self.money))
+        
             }
         }
         
-        money += gameManager.getTapIncome(level:Double((self.player?.level)!))
-        self.moneyLabel?.text = String(self.money)
+
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -125,4 +133,11 @@ class GameScene: SKScene {
         // Called before each frame is rendered
         
     }
+    
+    func updateMoney(notification:Notification) {
+        self.money = (self.player.money)
+        self.moneyLabel.text = String(Int(self.money))
+        self.levelLabel.text = "Level \(String(describing: self.player.level))"
+    }
+    
 }
