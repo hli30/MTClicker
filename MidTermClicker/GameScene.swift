@@ -8,27 +8,43 @@
 
 import SpriteKit
 import GameplayKit
+import RealmSwift
 
 protocol GameSceneDelegate:class{
-    func playerTapSettings(player:Player)
-    func playerTapInventory(player:Player)
-    func playerTapBuildings(player:Player)
-    func playerTapShop(player:Player)
+    func playerTapSettings()
+    func playerTapInventory()
+    func playerTapBuildings()
+    func playerTapShop()
 }
 
 class GameScene: SKScene {
     
     weak var controllerDelegate:GameSceneDelegate?
     var player:Player?
-    
-    
+    let gameManager = GameManager()
+    var money = 0
+    var moneyLabel:SKLabelNode?
+  
     override func didMove(to view: SKView)
     {
+        self.player?.money = money
         if let playerFromUserData = self.userData?.value(forKey: "player") {
             self.player = (playerFromUserData as! Player)
         }
+           
+        let avatar = self.childNode(withName: "avatarNode") as? SKSpriteNode
         
-       
+        guard let avatarData = self.player?.avatar else {
+            return
+        }
+        
+        guard let avatarImage = UIImage(data: avatarData) else {
+            return
+        }
+        
+        avatar?.texture = SKTexture(image: avatarImage)
+        
+        self.moneyLabel = self.childNode(withName: "money") as? SKLabelNode
     }
     
     
@@ -49,23 +65,38 @@ class GameScene: SKScene {
         let touch:UITouch = touches.first! as UITouch
         let positionInScene = touch.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
+        let realm = try! Realm()
         
         if let name = touchedNode.name
         {
             if name == "shopButton"
             {
-                self.controllerDelegate?.playerTapShop(player: self.player!)
+                print("tapnode shopbutton")
+                try! realm.write {
+                    self.player?.money = money
+                }
+                self.controllerDelegate?.playerTapShop()
+                
                 
             } else if name == "itemButton" {
-                
-                self.controllerDelegate?.playerTapInventory(player: self.player!)
+                print("tapnode itembutton")
+                try! realm.write {
+                    self.player?.money = money
+                }
+                self.controllerDelegate?.playerTapInventory()
                 
             } else if name == "settingsButton" {
-                
-                self.controllerDelegate?.playerTapSettings(player: self.player!)
+                print("tapnode settingsbutton")
+                try! realm.write {
+                    self.player?.money = money
+                }
+                self.controllerDelegate?.playerTapSettings()
                 
             }
         }
+        
+        money += gameManager.getTapIncome(level:Double((self.player?.level)!))
+        self.moneyLabel?.text = String(self.money)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

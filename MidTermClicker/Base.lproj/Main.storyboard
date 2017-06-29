@@ -20,13 +20,12 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="V8u-Ck-hrd"/>
                     <connections>
                         <segue destination="k9r-ED-PyZ" kind="presentation" identifier="showInventory" id="U9C-od-J85"/>
                         <segue destination="eYY-XT-aOi" kind="presentation" identifier="showSettings" id="iVC-bt-6jq"/>
-                        <segue destination="wcN-HN-BKZ" kind="presentation" id="xLA-hB-47g"/>
+                        <segue destination="wcN-HN-BKZ" kind="presentation" identifier="showShop" id="xLA-hB-47g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

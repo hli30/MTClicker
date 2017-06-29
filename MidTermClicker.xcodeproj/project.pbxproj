@@ -34,6 +34,7 @@
 		4AB7696E1F0477F0009C3B20 /* BackgroundTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4AB7696D1F0477F0009C3B20 /* BackgroundTileSet.sks */; };
 		4AB769711F048081009C3B20 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4AB769701F048081009C3B20 /* TestScene.sks */; };
 		8E591FE2F0EB65DE995734E9 /* Pods_MidTermClicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */; };
+		FF25E4571F0483DF009408B4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25E4561F0483DF009408B4 /* UIImageExtension.swift */; };
 		FF6D7FE31F01C4ED006B6368 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE21F01C4ED006B6368 /* GameManager.swift */; };
 		FF6D7FE51F02D5FD006B6368 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */; };
 		FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6D7FE61F02D65D006B6368 /* Shop.storyboard */; };
@@ -75,6 +76,7 @@
 		90AAAD1526E59A03C480A21D /* Pods-MidTermClicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.debug.xcconfig"; sourceTree = "<group>"; };
 		B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.release.xcconfig"; sourceTree = "<group>"; };
 		C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MidTermClicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF25E4561F0483DF009408B4 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		FF6D7FE21F01C4ED006B6368 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FF6D7FE41F02D5FD006B6368 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		FF6D7FE61F02D65D006B6368 /* Shop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				4AB769701F048081009C3B20 /* TestScene.sks */,
 				4A5130F01F01B8540014D0E0 /* Items.swift */,
 				4A5130F21F01B88A0014D0E0 /* Buildings.swift */,
+				FF25E4561F0483DF009408B4 /* UIImageExtension.swift */,
 				FF6D7FE21F01C4ED006B6368 /* GameManager.swift */,
 				4A5130DC1F01965D0014D0E0 /* Main.storyboard */,
 				4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */,
@@ -376,6 +379,7 @@
 				FF6D7FE91F02D76D006B6368 /* ShopCell.swift in Sources */,
 				4A5130F11F01B8540014D0E0 /* Items.swift in Sources */,
 				4A5130F51F02DA350014D0E0 /* InventoryViewController.swift in Sources */,
+				FF25E4571F0483DF009408B4 /* UIImageExtension.swift in Sources */,
 				4A5131061F0320A80014D0E0 /* OutPutFormatter.swift in Sources */,
 				4A83A98C1F044EA500930853 /* TutorialScene.swift in Sources */,
 				4A5130ED1F01B2170014D0E0 /* Upgrades.swift in Sources */,

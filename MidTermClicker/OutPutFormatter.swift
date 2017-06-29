@@ -10,6 +10,10 @@ import Foundation
 
 class OutPutFormatter {
     
+    init() {
+        
+    }
+    
     func buildingDetailsFormatter(building:Buildings) -> String {
         let name = building.name
         let buildingDescription = building.upgradeDescription
