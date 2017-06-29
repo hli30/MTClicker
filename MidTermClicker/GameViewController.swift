@@ -12,6 +12,7 @@ import GameplayKit
 import RealmSwift
 
 class GameViewController: UIViewController {
+    var scene = GameScene()
     var player:Player!
     var delegate:GameSceneDelegate?
 
@@ -36,8 +37,9 @@ class GameViewController: UIViewController {
                 scene.userData = NSMutableDictionary()
                 scene.userData?.setObject(self.player, forKey: "player" as NSCopying)
                 
+                self.scene = scene
                 // Present the scene
-                view.presentScene(scene)
+                view.presentScene(self.scene)
             }
             
             
@@ -116,6 +118,7 @@ extension GameViewController {
         if segue.identifier == "showUpgrades" {
             if let destinationVC = segue.destination as? UpgradeViewController {
                 destinationVC.player = self.player
+                destinationVC.delegate = scene
             }
         }
         

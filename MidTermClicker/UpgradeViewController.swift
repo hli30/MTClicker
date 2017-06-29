@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 import RealmSwift
 
+protocol UpgradeVCDelegate: class
+{
+    func updateNode(with image: UIImage)
+}
+
 class UpgradeViewController:UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var delegate: UpgradeVCDelegate?
     var player:Player!
     var buildingShop:[Buildings] = [Buildings(type: .farm),
                                     Buildings(type: .garden),
@@ -72,7 +78,10 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
                                                                 self.player.properties.append(self.buildingShop[indexPath.row])
                                                             }
                                                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
-
+                                                            
+                                                            guard let imageData = self.buildingShop[indexPath.item].iconImage else { return }
+                                                            guard let buildingImage = UIImage.convertDataToImage(dataToBeConverted: imageData) else { return }
+                                                            self.delegate?.updateNode(with: buildingImage)
                                                             
             }))
         } else {

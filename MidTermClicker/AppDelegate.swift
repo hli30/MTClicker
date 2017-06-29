@@ -17,22 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        guard let image = UIImage(named:"star")  else {
-            abort()
-        }
-        
-        guard let imgData = UIImagePNGRepresentation(image) else {
-            abort()
-        }
-        
-        let demoPlayer = Player(playerName: "example",playerAvatar:imgData)
-        
         let realm = try! Realm()
 
-        try! realm.write {
-            realm.add(demoPlayer)
+        let playerQuery = realm.objects(Player.self)
+        
+        if playerQuery.isEmpty {
+            guard let image = UIImage(named:"star")  else {
+                abort()
+            }
+            
+            guard let imgData = UIImagePNGRepresentation(image) else {
+                abort()
+            }
+            
+            let demoPlayer = Player(playerName: "example",playerAvatar:imgData)
+            
+            
+            try! realm.write {
+                realm.add(demoPlayer)
+            }
         }
+        
+
         
         
         return true
