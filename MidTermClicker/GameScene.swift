@@ -18,7 +18,7 @@ protocol GameSceneDelegate:class{
     func playerTapAvatar()
 }
 
-class GameScene: SKScene {
+class GameScene: SKScene, UpgradeVCDelegate {
     
     weak var controllerDelegate:GameSceneDelegate?
     var player:Player!
@@ -27,6 +27,11 @@ class GameScene: SKScene {
     var moneyLabel:SKLabelNode!
     var dirtTileNode:SKTileMapNode!
     var levelLabel:SKLabelNode!
+    var slot1:SKSpriteNode!
+    var slot2:SKSpriteNode!
+    var slot3:SKSpriteNode!
+    
+    var selectedNode: SKSpriteNode?
     
     override func sceneDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateMoney), name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
@@ -56,8 +61,16 @@ class GameScene: SKScene {
         
         self.moneyLabel = self.dirtTileNode.childNode(withName: "money") as? SKLabelNode
         self.levelLabel = self.dirtTileNode.childNode(withName: "level") as? SKLabelNode
+        self.slot1 = self.dirtTileNode.childNode(withName: "slot1") as? SKSpriteNode
+        self.slot2 = self.dirtTileNode.childNode(withName: "slot2") as? SKSpriteNode
+        self.slot3 = self.dirtTileNode.childNode(withName: "slot3") as? SKSpriteNode
+
         self.levelLabel.text = "Level \(String(describing: self.player.level))"
         self.moneyLabel.text = String(Int(self.money))
+        
+        self.slot1.color = UIColor.clear
+        self.slot2.color = UIColor.clear
+        self.slot3.color = UIColor.clear
     }
     
     
@@ -82,45 +95,50 @@ class GameScene: SKScene {
         
         if let name = touchedNode.name
         {
-            if name == "shopButton"
-            {
+            switch name {
+            case "shopButton":
                 try! realm.write {
                     self.player.money = money
                 }
                 self.controllerDelegate?.playerTapShop()
-
-            } else if name == "itemButton" {
-                try! realm.write {
-                    self.player.money = money
-                }
-                self.controllerDelegate?.playerTapInventory()
-                
-            } else if name == "settingsButton" {
+            case "settingsButton":
                 try! realm.write {
                     self.player.money = money
                 }
                 self.controllerDelegate?.playerTapSettings()
-                
-            } else if name == "slot1" || name == "slot2" || name == "slot3" {
+            case "itemButton":
                 try! realm.write {
                     self.player.money = money
                 }
-                self.controllerDelegate?.playerTapBuildings()
-                
-            } else if name == "avatarNode" {
+                self.controllerDelegate?.playerTapInventory()
+            case "avatarNode":
                 try! realm.write {
                     self.player.money = money
                 }
                 self.controllerDelegate?.playerTapAvatar()
-                
-            } else {
+            case "slot1":
+                selectedNode = slot1
+                try! realm.write {
+                    self.player.money = money
+                }
+                self.controllerDelegate?.playerTapBuildings()
+            case "slot2":
+                selectedNode = slot2
+                try! realm.write {
+                    self.player.money = money
+                }
+                self.controllerDelegate?.playerTapBuildings()
+            case "slot3":
+                selectedNode = slot3
+                try! realm.write {
+                    self.player.money = money
+                }
+                self.controllerDelegate?.playerTapBuildings()
+            default:
                 money += gameManager.getTapIncome(level: Double((self.player.level)), player: self.player)
                 self.moneyLabel.text = String(Int(self.money))
-        
             }
         }
-        
-
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -135,16 +153,19 @@ class GameScene: SKScene {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
-    
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
+        // Called before each frame is rendered        
     }
     
     func updateMoney(notification:Notification) {
         self.money = (self.player.money)
         self.moneyLabel.text = String(Int(self.money))
         self.levelLabel.text = "Level \(String(describing: self.player.level))"
+    }
+    
+    // MARK: - Delegate for Upgrade Sceeen
+    func updateNode(with image: UIImage) {
+        selectedNode?.texture = SKTexture(image: image)
     }
     
 }
