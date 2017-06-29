@@ -83,7 +83,7 @@ extension GameViewController: GameSceneDelegate {
         self.performSegue(withIdentifier: "showInventory", sender: self)
     }
     func playerTapBuildings() {
-        
+        self.performSegue(withIdentifier: "showUpgrades", sender: self)
     }
     func playerTapShop() {
         print("shop pressed")
@@ -107,6 +107,12 @@ extension GameViewController {
         }
         
         if segue.identifier == "showSettings" {
+            if let destinationVC = segue.destination as? SettingsViewController {
+                destinationVC.player = self.player
+            }
+        }
+        
+        if segue.identifier == "showUpgrades" {
             if let destinationVC = segue.destination as? SettingsViewController {
                 destinationVC.player = self.player
             }

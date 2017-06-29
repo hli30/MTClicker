@@ -51,6 +51,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
 //        itemCell.itemImageView.image = currentItem?.iconImage
         itemCell.itemDescriptionTextView.text = outputFormatter.itemDetailsFormatter(item: currentItem!)
         
+        
         return itemCell
     }
     

@@ -9,6 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--BuildingDetailsStoryBoard-->
+        <scene sceneID="eAV-FC-ocq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BuildingDetailsStoryBoard" id="nzu-tZ-RiR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRK-Lu-dTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="30"/>
+        </scene>
+        <!--Upgrade-->
+        <scene sceneID="3oH-Rr-ITO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Upgrade" id="XUo-MZ-2GH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRY-ro-wtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-253"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -26,6 +42,8 @@
                         <segue destination="k9r-ED-PyZ" kind="presentation" identifier="showInventory" id="U9C-od-J85"/>
                         <segue destination="eYY-XT-aOi" kind="presentation" identifier="showSettings" id="iVC-bt-6jq"/>
                         <segue destination="wcN-HN-BKZ" kind="presentation" identifier="showShop" id="xLA-hB-47g"/>
+                        <segue destination="nzu-tZ-RiR" kind="presentation" identifier="showBuildingDetail" id="fSe-K0-g0R"/>
+                        <segue destination="XUo-MZ-2GH" kind="presentation" identifier="showUpgrades" id="lgz-yu-IaT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -59,7 +77,7 @@
         <!--Navigation Controller-->
         <scene sceneID="nth-Tf-BLX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zJb-Ty-BzE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zJb-Ty-BzE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QVW-Oh-qP4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

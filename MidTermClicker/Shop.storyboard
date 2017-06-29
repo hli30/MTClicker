@@ -12,7 +12,7 @@
         <!--Shop View Controller-->
         <scene sceneID="3Re-TH-1ID">
             <objects>
-                <viewController id="ect-oU-PHm" customClass="ShopViewController" customModule="MidTermClicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="ect-oU-PHm" customClass="ShopViewController" customModule="MidTermClicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Ik-ie-sAJ"/>
                         <viewControllerLayoutGuide type="bottom" id="YeR-oC-78r"/>
@@ -26,8 +26,8 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-Uh-CKr">
                                         <rect key="frame" x="0.0" y="80" width="323" height="407"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d9s-Yx-en3">
+                                        <color key="backgroundColor" red="0.53747728989999999" green="1" blue="0.60374172250000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d9s-Yx-en3">
                                             <size key="itemSize" width="322" height="412"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -35,7 +35,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopCell" id="f2S-nL-xRs" customClass="ShopCell" customModule="MidTermClicker" customModuleProvider="target">
-                                                <rect key="frame" x="0.5" y="0.0" width="322" height="412"/>
+                                                <rect key="frame" x="0.0" y="-2.5" width="322" height="412"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="322" height="412"/>
@@ -43,8 +43,8 @@
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-wu-HyU">
                                                             <rect key="frame" x="0.0" y="300" width="322" height="112"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-oN-ysJ">
@@ -75,29 +75,35 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecE-hv-d3G">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="80"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_panel" translatesAutoresizingMaskIntoConstraints="NO" id="PDz-DK-bHh">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="80"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueN-hv-udA">
-                                                <rect key="frame" x="130" y="24" width="63" height="32.5"/>
+                                                <rect key="frame" x="139" y="24" width="45" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-T6-C6b">
-                                                <rect key="frame" x="278" y="8" width="37" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Done"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-T6-C6b">
+                                                <rect key="frame" x="285" y="8" width="18" height="22"/>
+                                                <state key="normal" image="red_cross"/>
                                                 <connections>
                                                     <action selector="buttonPressed:" destination="ect-oU-PHm" eventType="touchUpInside" id="5HF-ZO-Wzm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
+                                            <constraint firstItem="PDz-DK-bHh" firstAttribute="leading" secondItem="ecE-hv-d3G" secondAttribute="leading" id="4G0-KR-9tY"/>
+                                            <constraint firstAttribute="trailing" secondItem="PDz-DK-bHh" secondAttribute="trailing" id="AJW-SD-lTo"/>
                                             <constraint firstAttribute="height" constant="80" id="EYs-Cu-HJz"/>
+                                            <constraint firstItem="n8j-T6-C6b" firstAttribute="top" secondItem="ecE-hv-d3G" secondAttribute="top" constant="8" id="I58-ZI-J9J"/>
+                                            <constraint firstAttribute="trailing" secondItem="n8j-T6-C6b" secondAttribute="trailing" constant="20" id="NIl-L3-F4Z"/>
+                                            <constraint firstAttribute="bottom" secondItem="PDz-DK-bHh" secondAttribute="bottom" id="dpz-WR-sU6"/>
+                                            <constraint firstItem="PDz-DK-bHh" firstAttribute="top" secondItem="ecE-hv-d3G" secondAttribute="top" id="x5V-cf-Ohf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.63489431659999995" blue="0.57468002220000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ecE-hv-d3G" firstAttribute="top" secondItem="ti0-CX-vQA" secondAttribute="top" id="5lz-uG-jYm"/>
                                     <constraint firstAttribute="trailing" secondItem="y3L-Uh-CKr" secondAttribute="trailing" id="Ggp-rj-sSb"/>
@@ -109,7 +115,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ti0-CX-vQA" firstAttribute="leading" secondItem="KC8-QJ-S8R" secondAttribute="leading" constant="26" id="8ra-8e-Nhs"/>
                             <constraint firstItem="YeR-oC-78r" firstAttribute="top" secondItem="ti0-CX-vQA" secondAttribute="bottom" constant="80" id="F8h-dw-Veo"/>
@@ -126,4 +131,8 @@
             <point key="canvasLocation" x="1383.2" y="139.880059970015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue_panel" width="100" height="100"/>
+        <image name="red_cross" width="18" height="18"/>
+    </resources>
 </document>
