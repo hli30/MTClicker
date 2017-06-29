@@ -35,7 +35,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopCell" id="f2S-nL-xRs" customClass="ShopCell" customModule="MidTermClicker" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="0.0" width="322" height="412"/>
+                                                <rect key="frame" x="0.5" y="0.0" width="322" height="412"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="322" height="412"/>
