@@ -12,7 +12,7 @@ import UIKit
 
 class ShopCell:UICollectionViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var itemDescriptionTextView: UITextView!
+    @IBOutlet weak var itemDescriptionTextField: UITextView!
     
     
     override func awakeFromNib() {

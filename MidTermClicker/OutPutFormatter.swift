@@ -36,8 +36,8 @@ class OutPutFormatter {
     }
     
     func itemDetailsFormatter(item:Items) -> String {
-        let name = item.name
-        let itemDescription = item.upgradeDescription
+        let name = item.name!
+        let itemDescription = item.upgradeDescription!
         let itemMultiplier = "Income multiplier: \(item.incomeMultiplier)"
         
         let outputString = "\(String(describing: name))\n\(String(describing: itemDescription))\n\(itemMultiplier)"

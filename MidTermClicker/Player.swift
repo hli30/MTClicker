@@ -12,11 +12,11 @@ import RealmSwift
 
 class Player: Object {
 
-    dynamic var money:Int = 0
-    dynamic var avatar:Data?
+    dynamic var money:Double = 0
+    dynamic var avatar:Data!
     dynamic var prestige:Int = 0
-    dynamic var settings:Settings?
-    dynamic var name: String?
+    dynamic var settings:Settings!
+    dynamic var name: String!
     dynamic var level:Int = 1;
     let inventory = List<Items>()
     let properties = List<Buildings>()

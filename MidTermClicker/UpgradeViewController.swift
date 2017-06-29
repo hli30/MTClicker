@@ -13,13 +13,13 @@ import RealmSwift
 class UpgradeViewController:UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var player:Player?
+    var player:Player!
     var buildingShop:[Buildings] = [Buildings(type: .farm),
                                     Buildings(type: .garden),
                                     Buildings(type: .chickenCoop)]
     
     override func viewDidLoad() {
-
+        
         
     }
     
@@ -32,14 +32,15 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buildingUpgradeCell", for: indexPath) as! UpgradeCell
-        let building = self.buildingShop[indexPath.row]
-        
-        if (player?.properties.contains(building))! {
-            cell.tintColor = UIColor.gray
-        }
+        let building = self.buildingShop[indexPath.item]
         
         cell.buildingDescriptionTextField.text = building.upgradeDescription
-//        cell.buildingImageView.image = building.iconImage
+        
+        guard let image = UIImage.convertDataToImage(dataToBeConverted: building.iconImage) else {
+            return cell
+        }
+        
+        cell.buildingImageView.image = image
         
         return cell
     }
@@ -53,20 +54,25 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("user pressed")
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                     message: "\(self.buildingShop[indexPath.row].price) will be deducted",
+                                                     message: "\(self.buildingShop[indexPath.item].price) will be deducted",
             preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        if (player?.money)! > self.buildingShop[indexPath.row].price {
+        if self.player.money >= self.buildingShop[indexPath.item].price {
             alertController.addAction(UIAlertAction.init(title: "Confirm",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(alertController:UIAlertAction) in
                                                             
                                                             let realm = try! Realm()
                                                             
+                                                            let newMoney = self.player.money - self.buildingShop[indexPath.item].price
                                                             try! realm.write {
-                                                                self.player?.properties.append(self.buildingShop[indexPath.row])
+                                                                self.player.money = newMoney
+                                                                self.player.properties.append(self.buildingShop[indexPath.row])
                                                             }
+                                                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
+
                                                             
             }))
         } else {
@@ -82,7 +88,7 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
                                                      handler: { (alertController:UIAlertAction) in
                                                         
         }))
-        
+        self.present(alertController, animated: true, completion: nil)
         
     }
 }

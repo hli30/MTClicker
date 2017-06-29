@@ -12,7 +12,7 @@ import GameplayKit
 import RealmSwift
 
 class GameViewController: UIViewController {
-    var player:Player?
+    var player:Player!
     var delegate:GameSceneDelegate?
 
     override func viewDidLoad() {
@@ -24,7 +24,6 @@ class GameViewController: UIViewController {
         self.player = playerQuery.first
         
         if let view = self.view as! SKView? {
-//             Load the SKScene from 'GameScene.sks'
             if let scene = GameScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
@@ -35,7 +34,7 @@ class GameViewController: UIViewController {
                 
                 // Pass player to scene
                 scene.userData = NSMutableDictionary()
-                scene.userData?.setObject(player!, forKey: "player" as NSCopying)
+                scene.userData?.setObject(self.player, forKey: "player" as NSCopying)
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -86,7 +85,6 @@ extension GameViewController: GameSceneDelegate {
         self.performSegue(withIdentifier: "showUpgrades", sender: self)
     }
     func playerTapShop() {
-        print("shop pressed")
         self.performSegue(withIdentifier: "showShop", sender: self)
     }
 }
@@ -113,7 +111,7 @@ extension GameViewController {
         }
         
         if segue.identifier == "showUpgrades" {
-            if let destinationVC = segue.destination as? SettingsViewController {
+            if let destinationVC = segue.destination as? UpgradeViewController {
                 destinationVC.player = self.player
             }
         }

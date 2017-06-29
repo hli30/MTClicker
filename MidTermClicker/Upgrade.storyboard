@@ -41,13 +41,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="322" height="412"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="174-Dr-LeN">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="174-Dr-LeN">
                                                             <rect key="frame" x="0.0" y="300" width="322" height="112"/>
                                                             <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MEC-WE-QeL">
+                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MEC-WE-QeL">
                                                             <rect key="frame" x="0.0" y="0.0" width="322" height="300"/>
                                                             <gestureRecognizers/>
                                                             <constraints>
@@ -71,6 +71,10 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="bGQ-0L-9lI" id="Yv7-hl-FAr"/>
+                                            <outlet property="delegate" destination="bGQ-0L-9lI" id="c7w-sC-0IH"/>
+                                        </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snO-Ha-Zby">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="80"/>

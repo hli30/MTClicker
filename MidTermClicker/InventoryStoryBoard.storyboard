@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="80" width="323" height="427"/>
                                         <color key="backgroundColor" red="0.53747728989999999" green="1" blue="0.60374172250000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="120" id="XH0-8q-Wzk" customClass="ItemTableViewCell" customModule="MidTermClicker" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="120" id="XH0-8q-Wzk" customClass="ItemTableViewCell" customModule="MidTermClicker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="323" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XH0-8q-Wzk" id="pgs-5z-u56">
@@ -76,7 +76,7 @@
                                                                 <constraint firstAttribute="width" constant="100" id="ivE-aO-cxA"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="shA-LK-riz">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="shA-LK-riz">
                                                             <rect key="frame" x="128" y="10" width="187" height="99.5"/>
                                                             <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -104,6 +104,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="84B-vD-RhS" id="jHy-Sg-83D"/>
+                                            <outlet property="delegate" destination="84B-vD-RhS" id="ta1-J9-tCh"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>

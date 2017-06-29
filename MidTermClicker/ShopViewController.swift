@@ -13,7 +13,7 @@ import RealmSwift
 class ShopViewController:UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var player:Player?
+    var player:Player!
     var itemShop:[Items] = [Items(type: .shovel),
                             Items(type: .sickle),
                             Items(type: .tractor)]
@@ -23,6 +23,7 @@ class ShopViewController:UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -31,14 +32,16 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopCell", for: indexPath) as! ShopCell
-        let item = self.itemShop[indexPath.row]
+        let item = self.itemShop[indexPath.item]
         
-        if (player?.inventory.contains(item))! {
-            cell.tintColor = UIColor.gray
+        cell.itemDescriptionTextField.text = item.upgradeDescription
+        
+        guard let image = UIImage.convertDataToImage(dataToBeConverted: item.iconImage) else {
+            print("cell image not valid")
+            return cell
         }
         
-        cell.itemDescriptionTextView.text = item.upgradeDescription
-//        cell.itemImageView.image = item.iconImage
+        cell.itemImageView.image = image
         
         return cell
     }
@@ -53,19 +56,26 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                   message: "\(self.itemShop[indexPath.row].price) will be deducted",
-                                            preferredStyle: UIAlertControllerStyle.actionSheet)
+                                                   message: "$\(self.itemShop[indexPath.item].price) will be deducted",
+                                            preferredStyle: UIAlertControllerStyle.alert)
         
-        if (player?.money)! > self.itemShop[indexPath.row].price {
+        if player.money >= self.itemShop[indexPath.item].price {
             alertController.addAction(UIAlertAction.init(title: "Confirm",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(alertController:UIAlertAction) in
                                                             
                                                             let realm = try! Realm()
                                                             
+                                                            let newMoney = self.player.money - self.itemShop[indexPath.item].price
+                                                            
                                                             try! realm.write {
-                                                                self.player?.inventory.append(self.itemShop[indexPath.row])
+                                                                self.player.money = newMoney
+                                                                self.player.inventory.append(self.itemShop[indexPath.row])
                                                             }
+                                                            
+                                                            print("money: \(String(describing: self.player.money))")
+                                                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
+
                                                             
             }))
         } else {
@@ -82,6 +92,6 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             
         }))
         
-        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
