@@ -44,27 +44,27 @@ class Buildings: Upgrades {
         let basePrice:Double = 500
         name = "Farm"
         upgradeDescription = "This is a farm"
-        iconImage = self.convertImageToData(imageName: "Farm")
+        iconImage = UIImage.convertImageToData(imageName: "Farm")
         passiveIncome = 100
-        price = Int(basePrice * (costMultiplier ^^ level))
+        price = basePrice * (costMultiplier ^^ level)
     }
     
     func makeGarden() {
         let basePrice:Double = 500
         name = "Garden"
         upgradeDescription = "This is a garden"
-        iconImage = self.convertImageToData(imageName: "Garden")
+        iconImage = UIImage.convertImageToData(imageName: "Garden")
         passiveIncome = 200
-        price = Int(basePrice * (costMultiplier ^^ level))
+        price = basePrice * (costMultiplier ^^ level)
     }
     
     func makeChickenCoop() {
         let basePrice:Double = 500
         name = "Chicken Coop"
         upgradeDescription = "This is a chicken coop"
-        iconImage = self.convertImageToData(imageName: "ChickenCoop")
+        iconImage = UIImage.convertImageToData(imageName: "Chickencoop")
         passiveIncome = 300
-        price = Int(basePrice * (costMultiplier ^^ level))
+        price = basePrice * (costMultiplier ^^ level)
     }
     
     func getPassiveIncome() -> Double {
