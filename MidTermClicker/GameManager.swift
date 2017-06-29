@@ -32,22 +32,22 @@ class GameManager {
     }
     
     func getTapIncome(level:Double,player:Player) -> Double {
+        if level == 1 {
+            return 1.0
+        }
+        
         let steepnessOfCurve = 1.50
         let baseIncome = level
         
         let multiplier = self.calculateTapMultiplier(player: player)
-        
         let incomeGrowth = 1 - 1 / ((steepnessOfCurve)^^level)
-        var tapIncome = baseIncome * (1.0 + incomeGrowth)
         
-        let multiplierOnIncome = multiplier * tapIncome
+        let tapIncome = baseIncome * (1.0 + incomeGrowth)
+        let multipliedIncome = tapIncome * (1.0 + multiplier)
         
-        tapIncome = tapIncome + multiplierOnIncome
-        
-        round(tapIncome)
-        return tapIncome
+        round(multipliedIncome)
+        return multipliedIncome
     }
-    
 
     
 }

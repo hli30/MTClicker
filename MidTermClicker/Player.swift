@@ -18,6 +18,7 @@ class Player: Object {
     dynamic var settings:Settings!
     dynamic var name: String!
     dynamic var level:Int = 1;
+    dynamic var levelCost:Double = 100
     let inventory = List<Items>()
     let properties = List<Buildings>()
     
