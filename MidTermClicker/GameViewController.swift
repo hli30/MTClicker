@@ -118,5 +118,11 @@ extension GameViewController {
                 destinationVC.player = self.player
             }
         }
+        
+        if segue.identifier == "showPlayerStats" {
+            if let destinationVC = segue.destination as? PlayerStatsViewController {
+                destinationVC.player = self.player
+            }
+        }
     }
 }
