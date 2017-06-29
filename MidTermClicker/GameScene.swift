@@ -24,6 +24,7 @@ class GameScene: SKScene {
     let gameManager = GameManager()
     var money = 0
     var moneyLabel:SKLabelNode?
+    var dirtTileNode:SKTileMapNode?
   
     override func didMove(to view: SKView)
     {
@@ -44,7 +45,9 @@ class GameScene: SKScene {
         
         avatar?.texture = SKTexture(image: avatarImage)
         
-        self.moneyLabel = self.childNode(withName: "money") as? SKLabelNode
+        self.dirtTileNode = self.childNode(withName: "dirtTileNode") as? SKTileMapNode
+        
+        self.moneyLabel = self.dirtTileNode?.childNode(withName: "money") as? SKLabelNode
     }
     
     
@@ -92,6 +95,12 @@ class GameScene: SKScene {
                 }
                 self.controllerDelegate?.playerTapSettings()
                 
+            } else if name == "slot1" || name == "slot2" || name == "slot3" {
+                print("tapnode slot1/2/3")
+                try! realm.write {
+                    self.player?.money = money
+                }
+                self.controllerDelegate?.playerTapBuildings()
             }
         }
         

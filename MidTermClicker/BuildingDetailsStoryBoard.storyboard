@@ -12,7 +12,7 @@
         <!--Building Details View Controller-->
         <scene sceneID="cmy-f2-tRH">
             <objects>
-                <viewController id="YXU-Nm-f9m" customClass="BuildingDetailsViewController" customModule="MidTermClicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="YXU-Nm-f9m" customClass="BuildingDetailsViewController" customModule="MidTermClicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ycm-d3-Gve"/>
                         <viewControllerLayoutGuide type="bottom" id="h9v-e2-6ob"/>
@@ -27,45 +27,56 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPf-2D-jI2">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Building Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-Qh-a9n">
-                                                <rect key="frame" x="97" y="30" width="128" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tq-tu-we2">
-                                                <rect key="frame" x="257" y="26" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Close"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_panel" translatesAutoresizingMaskIntoConstraints="NO" id="eIX-Rh-g2L">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="80"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tq-tu-we2">
+                                                <rect key="frame" x="285" y="8" width="18" height="22"/>
+                                                <state key="normal" image="red_cross"/>
                                                 <connections>
                                                     <action selector="closeButtonPressed:" destination="YXU-Nm-f9m" eventType="touchUpInside" id="URZ-hG-DmR"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Building Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-Qh-a9n">
+                                                <rect key="frame" x="91" y="30" width="140" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="IF7-uf-IzL"/>
+                                            <constraint firstAttribute="trailing" secondItem="7tq-tu-we2" secondAttribute="trailing" constant="20" id="MTp-el-cnd"/>
+                                            <constraint firstAttribute="bottom" secondItem="eIX-Rh-g2L" secondAttribute="bottom" id="OAm-Nd-Rg3"/>
+                                            <constraint firstAttribute="trailing" secondItem="eIX-Rh-g2L" secondAttribute="trailing" id="UEZ-Zb-KdI"/>
+                                            <constraint firstItem="eIX-Rh-g2L" firstAttribute="leading" secondItem="yPf-2D-jI2" secondAttribute="leading" id="g0A-yy-FZ7"/>
+                                            <constraint firstItem="eIX-Rh-g2L" firstAttribute="top" secondItem="yPf-2D-jI2" secondAttribute="top" id="hfF-Ob-h95"/>
+                                            <constraint firstItem="7tq-tu-we2" firstAttribute="top" secondItem="yPf-2D-jI2" secondAttribute="top" constant="8" id="tLH-ej-j1L"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNS-2T-DWM">
                                         <rect key="frame" x="0.0" y="80" width="323" height="427"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey_panel" translatesAutoresizingMaskIntoConstraints="NO" id="zPU-P9-bx2">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="427"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uoz-De-5Mf">
                                                 <rect key="frame" x="8" y="221" width="307" height="198"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wTj-UI-CbI">
                                                         <rect key="frame" x="0.0" y="0.0" width="153.5" height="198"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-DX-evK">
                                                         <rect key="frame" x="153.5" y="0.0" width="153.5" height="198"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -82,13 +93,6 @@
                                                     <constraint firstItem="r4Z-DX-evK" firstAttribute="leading" secondItem="wTj-UI-CbI" secondAttribute="trailing" id="sjO-IU-ICK"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="je8-PD-uE7">
-                                                <rect key="frame" x="8" y="8" width="160" height="160"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="40o-Fd-Rtt"/>
-                                                    <constraint firstAttribute="height" constant="160" id="ikg-rp-X34"/>
-                                                </constraints>
-                                            </imageView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shY-QW-Q4l">
                                                 <rect key="frame" x="42" y="193" width="239" height="2"/>
                                             </progressView>
@@ -106,8 +110,14 @@
                                                     <action selector="upgradeButtonPressed:" destination="YXU-Nm-f9m" eventType="touchUpInside" id="Zq9-ge-aXh"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="je8-PD-uE7">
+                                                <rect key="frame" x="8" y="8" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="40o-Fd-Rtt"/>
+                                                    <constraint firstAttribute="height" constant="160" id="ikg-rp-X34"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="pap-yD-bv3" secondAttribute="trailing" constant="44" id="1Yq-CI-X7H"/>
                                             <constraint firstItem="Uoz-De-5Mf" firstAttribute="leading" secondItem="lNS-2T-DWM" secondAttribute="leading" constant="8" id="2LW-er-GqN"/>
@@ -128,7 +138,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.63489431659999995" blue="0.57468002220000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="lNS-2T-DWM" secondAttribute="bottom" id="52E-b3-Vmb"/>
                                     <constraint firstItem="yPf-2D-jI2" firstAttribute="top" secondItem="B5a-xE-nyE" secondAttribute="top" id="JB5-Gi-QAP"/>
@@ -140,7 +149,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="h9v-e2-6ob" firstAttribute="top" secondItem="B5a-xE-nyE" secondAttribute="bottom" constant="70" id="H07-4w-5Ba"/>
                             <constraint firstItem="B5a-xE-nyE" firstAttribute="top" secondItem="Ycm-d3-Gve" secondAttribute="bottom" constant="70" id="Sch-tB-MX7"/>
@@ -160,4 +168,9 @@
             <point key="canvasLocation" x="-255.19999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue_panel" width="100" height="100"/>
+        <image name="grey_panel" width="100" height="100"/>
+        <image name="red_cross" width="18" height="18"/>
+    </resources>
 </document>

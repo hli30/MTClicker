@@ -28,11 +28,7 @@
 		4A5131011F030E420014D0E0 /* BuildingDetailsStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5131001F030E420014D0E0 /* BuildingDetailsStoryBoard.storyboard */; };
 		4A5131031F030E780014D0E0 /* BuildingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5131021F030E780014D0E0 /* BuildingDetailsViewController.swift */; };
 		4A5131061F0320A80014D0E0 /* OutPutFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */; };
-		4A83A9841F0445B500930853 /* TutorialStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A9831F0445B500930853 /* TutorialStoryBoard.storyboard */; };
-		4A83A98A1F044E5A00930853 /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A9891F044E5A00930853 /* TutorialScene.sks */; };
-		4A83A98C1F044EA500930853 /* TutorialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A98B1F044EA500930853 /* TutorialScene.swift */; };
 		4AB7696E1F0477F0009C3B20 /* BackgroundTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4AB7696D1F0477F0009C3B20 /* BackgroundTileSet.sks */; };
-		4AB769711F048081009C3B20 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4AB769701F048081009C3B20 /* TestScene.sks */; };
 		8E591FE2F0EB65DE995734E9 /* Pods_MidTermClicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */; };
 		FF25E4571F0483DF009408B4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25E4561F0483DF009408B4 /* UIImageExtension.swift */; };
 		FF6D7FE31F01C4ED006B6368 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6D7FE21F01C4ED006B6368 /* GameManager.swift */; };
@@ -68,11 +64,7 @@
 		4A5131001F030E420014D0E0 /* BuildingDetailsStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuildingDetailsStoryBoard.storyboard; sourceTree = "<group>"; };
 		4A5131021F030E780014D0E0 /* BuildingDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingDetailsViewController.swift; sourceTree = "<group>"; };
 		4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutPutFormatter.swift; sourceTree = "<group>"; };
-		4A83A9831F0445B500930853 /* TutorialStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialStoryBoard.storyboard; sourceTree = "<group>"; };
-		4A83A9891F044E5A00930853 /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
-		4A83A98B1F044EA500930853 /* TutorialScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialScene.swift; sourceTree = "<group>"; };
 		4AB7696D1F0477F0009C3B20 /* BackgroundTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BackgroundTileSet.sks; sourceTree = "<group>"; };
-		4AB769701F048081009C3B20 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
 		90AAAD1526E59A03C480A21D /* Pods-MidTermClicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.debug.xcconfig"; sourceTree = "<group>"; };
 		B9B37A39EB113002EC46C584 /* Pods-MidTermClicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidTermClicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MidTermClicker/Pods-MidTermClicker.release.xcconfig"; sourceTree = "<group>"; };
 		C9A9A40D9E1B9603FCA33156 /* Pods_MidTermClicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MidTermClicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +127,6 @@
 				4A5130EA1F019EE70014D0E0 /* Player.swift */,
 				4A5130EE1F01B4BA0014D0E0 /* Settings.swift */,
 				4A5130EC1F01B2170014D0E0 /* Upgrades.swift */,
-				4AB769701F048081009C3B20 /* TestScene.sks */,
 				4A5130F01F01B8540014D0E0 /* Items.swift */,
 				4A5130F21F01B88A0014D0E0 /* Buildings.swift */,
 				FF25E4561F0483DF009408B4 /* UIImageExtension.swift */,
@@ -143,7 +134,6 @@
 				4A5130DC1F01965D0014D0E0 /* Main.storyboard */,
 				4A5131051F0320A80014D0E0 /* OutPutFormatter.swift */,
 				4AB7696F1F0477F8009C3B20 /* BackgroundTileSet */,
-				4A83A98D1F044EAC00930853 /* TutorialScene */,
 				FF6D7FF31F0360E3006B6368 /* UpgradeVC */,
 				FF6D7FF21F035F81006B6368 /* ShopVC */,
 				4A5130FC1F0309D50014D0E0 /* InventoryVC */,
@@ -182,16 +172,6 @@
 				4A5131021F030E780014D0E0 /* BuildingDetailsViewController.swift */,
 			);
 			name = BuildingDetailsVC;
-			sourceTree = "<group>";
-		};
-		4A83A98D1F044EAC00930853 /* TutorialScene */ = {
-			isa = PBXGroup;
-			children = (
-				4A83A9831F0445B500930853 /* TutorialStoryBoard.storyboard */,
-				4A83A98B1F044EA500930853 /* TutorialScene.swift */,
-				4A83A9891F044E5A00930853 /* TutorialScene.sks */,
-			);
-			name = TutorialScene;
 			sourceTree = "<group>";
 		};
 		4AB7696F1F0477F8009C3B20 /* BackgroundTileSet */ = {
@@ -297,14 +277,11 @@
 				4AB7696E1F0477F0009C3B20 /* BackgroundTileSet.sks in Resources */,
 				4A5131011F030E420014D0E0 /* BuildingDetailsStoryBoard.storyboard in Resources */,
 				FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */,
-				4A83A98A1F044E5A00930853 /* TutorialScene.sks in Resources */,
-				4A83A9841F0445B500930853 /* TutorialStoryBoard.storyboard in Resources */,
 				4A5130DE1F01965D0014D0E0 /* Main.storyboard in Resources */,
 				4A5130D51F01965D0014D0E0 /* GameScene.sks in Resources */,
 				4A5130F91F02E6670014D0E0 /* InventoryStoryBoard.storyboard in Resources */,
 				4A5130FB1F02E8870014D0E0 /* SettingsStoryBoard.storyboard in Resources */,
 				4A5130E01F01965D0014D0E0 /* Assets.xcassets in Resources */,
-				4AB769711F048081009C3B20 /* TestScene.sks in Resources */,
 				FF6D7FED1F031E51006B6368 /* Upgrade.storyboard in Resources */,
 				4A5130E31F01965D0014D0E0 /* LaunchScreen.storyboard in Resources */,
 				4A5130D71F01965D0014D0E0 /* Actions.sks in Resources */,
@@ -381,7 +358,6 @@
 				4A5130F51F02DA350014D0E0 /* InventoryViewController.swift in Sources */,
 				FF25E4571F0483DF009408B4 /* UIImageExtension.swift in Sources */,
 				4A5131061F0320A80014D0E0 /* OutPutFormatter.swift in Sources */,
-				4A83A98C1F044EA500930853 /* TutorialScene.swift in Sources */,
 				4A5130ED1F01B2170014D0E0 /* Upgrades.swift in Sources */,
 				4A5130F71F02DD7F0014D0E0 /* ItemTableViewCell.swift in Sources */,
 				4A5130D31F01965D0014D0E0 /* AppDelegate.swift in Sources */,
