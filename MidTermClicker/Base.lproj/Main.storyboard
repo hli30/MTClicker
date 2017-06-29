@@ -17,6 +17,14 @@
             </objects>
             <point key="canvasLocation" x="1215" y="30"/>
         </scene>
+        <!--PlayerStatsStoryBoard-->
+        <scene sceneID="8os-qw-Ymg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayerStatsStoryBoard" id="26Q-D5-l2X" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbu-tK-Hc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1214" y="252"/>
+        </scene>
         <!--Upgrade-->
         <scene sceneID="3oH-Rr-ITO">
             <objects>
@@ -44,6 +52,7 @@
                         <segue destination="wcN-HN-BKZ" kind="presentation" identifier="showShop" id="xLA-hB-47g"/>
                         <segue destination="nzu-tZ-RiR" kind="presentation" identifier="showBuildingDetail" id="fSe-K0-g0R"/>
                         <segue destination="XUo-MZ-2GH" kind="presentation" identifier="showUpgrades" id="lgz-yu-IaT"/>
+                        <segue destination="26Q-D5-l2X" kind="presentation" identifier="showPlayerStats" id="ukK-4L-Dhm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
