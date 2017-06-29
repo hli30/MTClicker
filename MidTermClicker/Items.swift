@@ -33,25 +33,27 @@ class Items: Upgrades {
     
     func makeShovel() {
         name = ""
-        upgradeDescription = "This is a farm"
-        iconImage = nil
+        upgradeDescription = "This is a shovel"
         incomeMultiplier = 0.10
         price = 50
+        iconImage = self.convertImageToData(imageName: "Shovel")
     }
     
     func makeSickle() {
         name = ""
-        upgradeDescription = "This is a farm"
-        iconImage = nil
+        upgradeDescription = "This is a sickle"
+        iconImage = self.convertImageToData(imageName: "Sickle")
         incomeMultiplier = 0.20
         price = 200
     }
     
     func makeTractor() {
         name = ""
-        upgradeDescription = "This is a farm"
-        iconImage = nil
+        upgradeDescription = "This is a tractor"
+        iconImage = self.convertImageToData(imageName: "Tractor")
         incomeMultiplier = 0.30
         price = 500
     }
+    
+
 }

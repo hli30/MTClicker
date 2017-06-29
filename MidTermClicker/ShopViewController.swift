@@ -14,9 +14,9 @@ class ShopViewController:UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var player:Player?
-    var itemShop:[Items] = [Items.init(type: .shovel),
-                            Items.init(type: .sickle),
-                            Items.init(type: .tractor)]
+    var itemShop:[Items] = [Items(type: .shovel),
+                            Items(type: .sickle),
+                            Items(type: .tractor)]
     
     override func viewDidLoad() {
 
@@ -38,7 +38,7 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         }
         
         cell.itemDescriptionTextView.text = item.upgradeDescription
-        cell.itemImageView.image = item.iconImage
+//        cell.itemImageView.image = item.iconImage
         
         return cell
     }
