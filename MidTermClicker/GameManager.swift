@@ -49,6 +49,11 @@ class GameManager {
         return multipliedIncome
     }
     
-    
+    func getPlayerLevelCost(player:Player) -> Double {
+        let basePrice = 100.0
+        let costMultiplier = 1.10
+        let levelCost = basePrice * (costMultiplier ^^ Double(player.level))
+        return levelCost
+    }
     
 }

@@ -62,7 +62,7 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("user pressed")
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                     message: "\(self.buildingShop[indexPath.item].price) will be deducted",
+                                                     message: "\(self.buildingShop[indexPath.item].price)0 will be deducted",
             preferredStyle: UIAlertControllerStyle.actionSheet)
         
         if self.player.money >= self.buildingShop[indexPath.item].price {
@@ -78,6 +78,10 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
                                                                 self.player.properties.append(self.buildingShop[indexPath.row])
                                                             }
                                                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
+                                                            
+                                                            let buildingToBePassed:[String:Buildings] = ["building":self.buildingShop[indexPath.item]]
+                                                            
+                                                            NotificationCenter.default.post(name: NSNotification.Name(rawValue:"purchasedProperty"), object: nil, userInfo: buildingToBePassed)
                                                             
                                                             guard let imageData = self.buildingShop[indexPath.item].iconImage else { return }
                                                             guard let buildingImage = UIImage.convertDataToImage(dataToBeConverted: imageData) else { return }

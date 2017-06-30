@@ -29,5 +29,7 @@ class Player: Object {
         avatar = playerAvatar
     }
     
+    
+    
 }
 

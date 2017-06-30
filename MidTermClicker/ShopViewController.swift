@@ -56,7 +56,7 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                   message: "$\(self.itemShop[indexPath.item].price) will be deducted",
+                                                   message: "$\(self.itemShop[indexPath.item].price)0 will be deducted",
                                             preferredStyle: UIAlertControllerStyle.alert)
         
         if player.money >= self.itemShop[indexPath.item].price {
@@ -72,8 +72,7 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
                                                                 self.player.money = newMoney
                                                                 self.player.inventory.append(self.itemShop[indexPath.row])
                                                             }
-                                                            
-                                                            print("money: \(String(describing: self.player.money))")
+                                                      
                                                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
 
                                                             

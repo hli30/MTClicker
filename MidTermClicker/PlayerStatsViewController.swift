@@ -18,6 +18,7 @@ class PlayerStatsViewController: UIViewController {
     
     var player:Player!
     let outputFormatter = OutPutFormatter.init()
+    var gameManager = GameManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class PlayerStatsViewController: UIViewController {
     @IBAction func levelUpButtonPressed(_ sender: UIButton) {
         
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                     message: "$\(self.player.levelCost) will be deducted",
+                                                     message: "$\(round(self.player.levelCost))0 will be deducted",
             preferredStyle: UIAlertControllerStyle.actionSheet)
         
         if self.player.money >= self.player.levelCost {
@@ -56,7 +57,10 @@ class PlayerStatsViewController: UIViewController {
                                                             try! realm.write {
                                                                 self.player.level += 1
                                                                 self.player.money = newMoney
+                                                                self.player.levelCost = self.gameManager.getPlayerLevelCost(player: self.player)
                                                             }
+                                                            
+                                                            
                                                             self.updateLevelTextview()
                                                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "viewControlledClosed"), object: nil)
                                                             

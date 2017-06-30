@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A1788231F057AF600236275 /* PlayerStatsStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1788221F057AF600236275 /* PlayerStatsStoryBoard.storyboard */; };
 		4A1788261F057BF900236275 /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1788251F057BF900236275 /* PlayerStatsViewController.swift */; };
+		4A1788281F0680ED00236275 /* SpriteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1788271F0680ED00236275 /* SpriteSheet.swift */; };
+		4A17882E1F06DD6900236275 /* ClickAnimationCoin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A17882D1F06DD6900236275 /* ClickAnimationCoin.sks */; };
 		4A5130D31F01965D0014D0E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5130D21F01965D0014D0E0 /* AppDelegate.swift */; };
 		4A5130D51F01965D0014D0E0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130D41F01965D0014D0E0 /* GameScene.sks */; };
 		4A5130D71F01965D0014D0E0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A5130D61F01965D0014D0E0 /* Actions.sks */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		4A1788221F057AF600236275 /* PlayerStatsStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerStatsStoryBoard.storyboard; sourceTree = "<group>"; };
 		4A1788251F057BF900236275 /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
+		4A1788271F0680ED00236275 /* SpriteSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteSheet.swift; sourceTree = "<group>"; };
+		4A17882D1F06DD6900236275 /* ClickAnimationCoin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ClickAnimationCoin.sks; sourceTree = "<group>"; };
 		4A5130CF1F01965D0014D0E0 /* MidTermClicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidTermClicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5130D21F01965D0014D0E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5130D41F01965D0014D0E0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				4A5130D41F01965D0014D0E0 /* GameScene.sks */,
 				4A5130D61F01965D0014D0E0 /* Actions.sks */,
 				4A5130D81F01965D0014D0E0 /* GameScene.swift */,
+				4A17882D1F06DD6900236275 /* ClickAnimationCoin.sks */,
+				4A1788271F0680ED00236275 /* SpriteSheet.swift */,
 				4A5130DA1F01965D0014D0E0 /* GameViewController.swift */,
 				4A5130EA1F019EE70014D0E0 /* Player.swift */,
 				4A5130EE1F01B4BA0014D0E0 /* Settings.swift */,
@@ -289,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB7696E1F0477F0009C3B20 /* BackgroundTileSet.sks in Resources */,
+				4A17882E1F06DD6900236275 /* ClickAnimationCoin.sks in Resources */,
 				4A5131011F030E420014D0E0 /* BuildingDetailsStoryBoard.storyboard in Resources */,
 				FF6D7FE71F02D65D006B6368 /* Shop.storyboard in Resources */,
 				4A5130DE1F01965D0014D0E0 /* Main.storyboard in Resources */,
@@ -372,6 +379,7 @@
 				FF6D7FE91F02D76D006B6368 /* ShopCell.swift in Sources */,
 				4A5130F11F01B8540014D0E0 /* Items.swift in Sources */,
 				4A5130F51F02DA350014D0E0 /* InventoryViewController.swift in Sources */,
+				4A1788281F0680ED00236275 /* SpriteSheet.swift in Sources */,
 				FF25E4571F0483DF009408B4 /* UIImageExtension.swift in Sources */,
 				4A5131061F0320A80014D0E0 /* OutPutFormatter.swift in Sources */,
 				4A5130ED1F01B2170014D0E0 /* Upgrades.swift in Sources */,
