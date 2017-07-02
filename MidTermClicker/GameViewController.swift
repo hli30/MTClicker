@@ -26,19 +26,13 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             if let scene = GameScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
-                
-                // Delegate
                 scene.controllerDelegate = self
-                
-                // Pass player to scene
+            
                 scene.userData = NSMutableDictionary()
-                scene.userData?.setObject(self.player, forKey: "player" as NSCopying)
+                scene.userData?.setObject(player, forKey: "player" as NSCopying)
                 
                 self.scene = scene
-                // Present the scene
                 view.presentScene(self.scene)
             }
             
@@ -78,19 +72,19 @@ class GameViewController: UIViewController {
 // MARK: GameSceneDelegate
 extension GameViewController: GameSceneDelegate {
     func playerTapSettings() {
-        self.performSegue(withIdentifier: "showSettings", sender: self)
+        performSegue(withIdentifier: "showSettings", sender: self)
     }
     func playerTapInventory() {
-        self.performSegue(withIdentifier: "showInventory", sender: self)
+        performSegue(withIdentifier: "showInventory", sender: self)
     }
     func playerTapBuildings() {
-        self.performSegue(withIdentifier: "showUpgrades", sender: self)
+        performSegue(withIdentifier: "showUpgrades", sender: self)
     }
     func playerTapShop() {
-        self.performSegue(withIdentifier: "showShop", sender: self)
+        performSegue(withIdentifier: "showShop", sender: self)
     }
     func playerTapAvatar() {
-        self.performSegue(withIdentifier: "showPlayerStats", sender: self)
+        performSegue(withIdentifier: "showPlayerStats", sender: self)
     }
 }
 
@@ -99,32 +93,32 @@ extension GameViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showShop" {
             if let destinationVC = segue.destination as? ShopViewController {
-                destinationVC.player = self.player
+                destinationVC.player = player
             }
         }
         
         if segue.identifier == "showInventory" {
             if let destinationVC = segue.destination as? InventoryViewController {
-                destinationVC.player = self.player
+                destinationVC.player = player
             }
         }
         
         if segue.identifier == "showSettings" {
             if let destinationVC = segue.destination as? SettingsViewController {
-                destinationVC.player = self.player
+                destinationVC.player = player
             }
         }
         
         if segue.identifier == "showUpgrades" {
             if let destinationVC = segue.destination as? UpgradeViewController {
-                destinationVC.player = self.player
+                destinationVC.player = player
                 destinationVC.delegate = scene
             }
         }
         
         if segue.identifier == "showPlayerStats" {
             if let destinationVC = segue.destination as? PlayerStatsViewController {
-                destinationVC.player = self.player
+                destinationVC.player = player
             }
         }
     }

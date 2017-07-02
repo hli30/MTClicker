@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Implement sounds and settings screen
+
 class SettingsViewController: UIViewController {
     
     var player:Player?
@@ -25,7 +27,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     

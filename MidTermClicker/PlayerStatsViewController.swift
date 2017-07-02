@@ -17,7 +17,7 @@ class PlayerStatsViewController: UIViewController {
     
     
     var player:Player!
-    let outputFormatter = OutPutFormatter.init()
+    let outputFormatter = OutPutFormatter()
     var gameManager = GameManager()
     
     override func viewDidLoad() {
@@ -42,10 +42,10 @@ class PlayerStatsViewController: UIViewController {
     @IBAction func levelUpButtonPressed(_ sender: UIButton) {
         
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                     message: "$\(round(self.player.levelCost))0 will be deducted",
+                                                     message: "$\(round(player.levelCost))0 will be deducted",
             preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        if self.player.money >= self.player.levelCost {
+        if player.money >= player.levelCost {
             alertController.addAction(UIAlertAction.init(title: "Confirm",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(alertController:UIAlertAction) in
@@ -57,7 +57,7 @@ class PlayerStatsViewController: UIViewController {
                                                             try! realm.write {
                                                                 self.player.level += 1
                                                                 self.player.money = newMoney
-                                                                self.player.levelCost = self.gameManager.getPlayerLevelCost(player: self.player)
+                                                                self.player.levelCost = self.gameManager.getPlayerLevelCost(player:self.player)
                                                             }
                                                             
                                                             
@@ -84,12 +84,12 @@ class PlayerStatsViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func updateLevelTextview() {
-        levelDescriptionTextView.text = outputFormatter.playerStatsFormatter(user: self.player)
-        self.playerLevelTextLabel.text = "Level: \(self.player.level)"
+        levelDescriptionTextView.text = outputFormatter.playerStatsFormatter(user: player)
+        playerLevelTextLabel.text = "Level: \(player.level)"
     }
 
 }

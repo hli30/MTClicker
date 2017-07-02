@@ -12,7 +12,6 @@ import UIKit
 extension UIImage {
     
     class func convertImageToData(imageName:String) -> Data? {
-        
         guard let image = UIImage(named: imageName) else {
             return nil
         }

@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+// TODO: Implement building upgrades/passive income
+
 class BuildingDetailsViewController: UIViewController {
 
     @IBOutlet weak var progressBarView: UIProgressView!
@@ -32,10 +34,10 @@ class BuildingDetailsViewController: UIViewController {
         let realm = try! Realm()
         
         try! realm.write {
-            self.player.properties.append(self.building!)
+            player.properties.append(building!)
         }
         
-        self.reloadView()
+        reloadView()
     }
     
     @IBAction func sellButtonPressed(_ sender: UIButton) {
