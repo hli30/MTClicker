@@ -30,15 +30,16 @@ class UpgradeViewController:UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
+// MARK: UICollectionView
 extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buildingUpgradeCell", for: indexPath) as! UpgradeCell
-        let building = self.buildingShop[indexPath.item]
+        let building = buildingShop[indexPath.item]
         
         cell.buildingDescriptionTextField.text = building.upgradeDescription
         
@@ -56,16 +57,15 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.buildingShop.count
+        return buildingShop.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("user pressed")
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                     message: "\(self.buildingShop[indexPath.item].price)0 will be deducted",
+                                                     message: "\(buildingShop[indexPath.item].price)0 will be deducted",
             preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        if self.player.money >= self.buildingShop[indexPath.item].price {
+        if player.money >= buildingShop[indexPath.item].price {
             alertController.addAction(UIAlertAction.init(title: "Confirm",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(alertController:UIAlertAction) in
@@ -101,7 +101,7 @@ extension UpgradeViewController:UICollectionViewDelegate, UICollectionViewDataSo
                                                      handler: { (alertController:UIAlertAction) in
                                                         
         }))
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
         
     }
 }

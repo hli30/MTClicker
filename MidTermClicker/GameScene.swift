@@ -44,14 +44,14 @@ class GameScene: SKScene, UpgradeVCDelegate {
     override func didMove(to view: SKView)
     {
         if let playerFromUserData = self.userData?.value(forKey: "player") {
-            self.player = (playerFromUserData as! Player)
+            player = (playerFromUserData as! Player)
         }
-        money = self.player.money
+        money = player.money
 
         
         let avatar = self.childNode(withName: "avatarNode") as? SKSpriteNode
         
-        guard let avatarData = self.player.avatar else {
+        guard let avatarData = player.avatar else {
             return
         }
         
@@ -61,18 +61,18 @@ class GameScene: SKScene, UpgradeVCDelegate {
         
         avatar?.texture = SKTexture(image: avatarImage)
         
-        self.moneyLabel = self.childNode(withName: "money") as? SKLabelNode
-        self.levelLabel = self.childNode(withName: "level") as? SKLabelNode
-        self.slot1 = self.childNode(withName: "slot1") as? SKSpriteNode
-        self.slot2 = self.childNode(withName: "slot2") as? SKSpriteNode
-        self.slot3 = self.childNode(withName: "slot3") as? SKSpriteNode
+        moneyLabel = self.childNode(withName: "money") as? SKLabelNode
+        levelLabel = self.childNode(withName: "level") as? SKLabelNode
+        slot1 = self.childNode(withName: "slot1") as? SKSpriteNode
+        slot2 = self.childNode(withName: "slot2") as? SKSpriteNode
+        slot3 = self.childNode(withName: "slot3") as? SKSpriteNode
 
-        self.levelLabel.text = "Level \(String(describing: self.player.level))"
-        self.moneyLabel.text = "$\(String(Int(self.money)))"
+        levelLabel.text = "Level \(String(describing: player.level))"
+        moneyLabel.text = "$\(String(Int(money)))"
         
-        self.slot1.color = UIColor.clear
-        self.slot2.color = UIColor.clear
-        self.slot3.color = UIColor.clear
+        slot1.color = UIColor.clear
+        slot2.color = UIColor.clear
+        slot3.color = UIColor.clear
         
     }
     
@@ -93,7 +93,7 @@ class GameScene: SKScene, UpgradeVCDelegate {
         
         let touch:UITouch = touches.first! as UITouch
         let positionInScene = touch.location(in: self)
-        let touchedNode = self.atPoint(positionInScene)
+        let touchedNode = atPoint(positionInScene)
         let realm = try! Realm()
         
         if let name = touchedNode.name
@@ -101,46 +101,46 @@ class GameScene: SKScene, UpgradeVCDelegate {
             switch name {
             case "shopButton":
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapShop()
+                controllerDelegate?.playerTapShop()
             case "settingsButton":
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapSettings()
+                controllerDelegate?.playerTapSettings()
             case "itemButton":
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapInventory()
+                controllerDelegate?.playerTapInventory()
             case "avatarNode":
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapAvatar()
+                controllerDelegate?.playerTapAvatar()
             case "slot1":
                 selectedNode = slot1
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapBuildings()
+                controllerDelegate?.playerTapBuildings()
             case "slot2":
                 selectedNode = slot2
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapBuildings()
+                controllerDelegate?.playerTapBuildings()
             case "slot3":
                 selectedNode = slot3
                 try! realm.write {
-                    self.player.money = money
+                    player.money = money
                 }
-                self.controllerDelegate?.playerTapBuildings()
+                controllerDelegate?.playerTapBuildings()
             default:
-                money += gameManager.getTapIncome(level: Double((self.player.level)), player: self.player)
-                self.moneyLabel.text = "$\(String(Int(self.money)))"
-                self.clickAnimationAtLocation(positionInScene: positionInScene)
+                money += gameManager.getTapIncome(level: Double((player.level)), player: player)
+                moneyLabel.text = "$\(String(Int(self.money)))"
+                clickAnimationAtLocation(positionInScene: positionInScene)
             }
         }
     }
@@ -168,20 +168,20 @@ class GameScene: SKScene, UpgradeVCDelegate {
     
     // MARK: - NotificationCenter Actions
     func updateMoney(notification:Notification) {
-        self.money = (self.player.money)
-        self.moneyLabel.text = "$\(String(Int(self.money)))"
-        self.levelLabel.text = "Level \(String(describing: self.player.level))"
+        money = (self.player.money)
+        moneyLabel.text = "$\(String(Int(money)))"
+        levelLabel.text = "Level \(String(describing: player.level))"
     }
     
     func addAnimal(notification:Notification) {
         let building = notification.userInfo?["building"] as? Buildings
         
         if building?.name == "Farm" {
-            self.addWalkingCow()
+            addWalkingCow()
         } else if building?.name == "Garden" {
-            self.addTheFlyingBee()
+            addTheFlyingBee()
         } else {
-            self.addWalkingChicken()
+            addWalkingChicken()
         }
     }
     
@@ -210,7 +210,7 @@ class GameScene: SKScene, UpgradeVCDelegate {
         
         bee.size = CGSize(width: 50, height: 50)
         bee.position = CGPoint(x: 220, y: 250)
-        self.addChild(bee)
+        addChild(bee)
         
         let beeAtlas = SKTextureAtlas(named: "Bees")
         let beeFrames: [SKTexture] = [
@@ -242,7 +242,7 @@ class GameScene: SKScene, UpgradeVCDelegate {
         
         cow.size = CGSize(width: 200, height: 200)
         cow.position = CGPoint(x: 0, y: -100)
-        self.addChild(cow)
+        addChild(cow)
         
         let cowFrames: [SKTexture] = [
             cowWalkLeft1,
@@ -274,7 +274,7 @@ class GameScene: SKScene, UpgradeVCDelegate {
         
         chicken.size = CGSize(width: 100, height: 100)
         chicken.position = CGPoint(x: 0, y: -200)
-        self.addChild(chicken)
+        addChild(chicken)
         
         let chickenFrames: [SKTexture] = [
             chickenWalkLeft1,

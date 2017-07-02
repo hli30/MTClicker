@@ -24,7 +24,7 @@ class ShopViewController:UIViewController {
     
     @IBAction func buttonPressed(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -32,7 +32,7 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopCell", for: indexPath) as! ShopCell
-        let item = self.itemShop[indexPath.item]
+        let item = itemShop[indexPath.item]
         
         cell.itemDescriptionTextField.text = item.upgradeDescription
         
@@ -51,15 +51,15 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.itemShop.count
+        return itemShop.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let alertController = UIAlertController.init(title: "Purchase Confirmation",
-                                                   message: "$\(self.itemShop[indexPath.item].price)0 will be deducted",
+                                                   message: "$\(itemShop[indexPath.item].price)0 will be deducted",
                                             preferredStyle: UIAlertControllerStyle.alert)
         
-        if player.money >= self.itemShop[indexPath.item].price {
+        if player.money >= itemShop[indexPath.item].price {
             alertController.addAction(UIAlertAction.init(title: "Confirm",
                                                          style: UIAlertActionStyle.default,
                                                          handler: {(alertController:UIAlertAction) in
@@ -91,6 +91,6 @@ extension ShopViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             
         }))
         
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }

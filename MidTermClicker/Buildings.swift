@@ -22,7 +22,6 @@ class Buildings: Upgrades {
     dynamic var level:Double = 1;
     let costMultiplier = 1.10
     
-
     enum BuildingTypes {
         case garden,farm,chickenCoop
     }

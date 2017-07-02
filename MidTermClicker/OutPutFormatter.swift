@@ -10,7 +10,7 @@ import Foundation
 
 class OutPutFormatter {
     
-    let gameManager = GameManager.init()
+    let gameManager = GameManager()
     
     init() {
         

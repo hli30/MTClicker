@@ -28,7 +28,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: Table View
