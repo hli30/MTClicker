@@ -8,7 +8,7 @@ the farm and various animals as well.  Coins can also be spent to level up the y
 base tap income.
 
 ## Design Process
-Jimmy was responsible for the back-end data models and logic, meanwhile Harry was in charge of all animations, UI aspects,
+Jimmy was responsible for the data models and logic, meanwhile Harry was in charge of all animations, UI aspects,
 and income alogorithms.
 
 ## Screenshots
